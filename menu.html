@@ -33,6 +33,175 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
+<style>
+	:root {
+  --red: #e50914;
+  --dark: #111;
+  --white: #fff;
+  --gray: #f5f5f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #111, #1b1b1b);
+  color: var(--white);
+}
+
+/* =======================
+   3D HEADING
+======================= */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  perspective: 1000px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  transform-style: preserve-3d;
+  animation: float 4s ease-in-out infinite;
+}
+
+.hero h1 span {
+  color: var(--red);
+}
+
+@keyframes float {
+  0% { transform: rotateX(0deg) rotateY(0deg); }
+  50% { transform: rotateX(10deg) rotateY(-10deg); }
+  100% { transform: rotateX(0deg) rotateY(0deg); }
+}
+
+.hero p {
+  color: #ccc;
+  margin-top: 15px;
+  font-size: 1.1rem;
+}
+
+/* =======================
+   PRICING SECTION
+======================= */
+.pricing {
+  padding: 50px 20px 80px;
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: linear-gradient(145deg, #1b1b1b, #0e0e0e);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(229,9,20,0.3), transparent);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(229,9,20,0.4);
+}
+
+.plan-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.plan-sub {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.price {
+  margin: 20px 0;
+}
+
+.price del {
+  color: #777;
+}
+
+.price h2 {
+  font-size: 2.2rem;
+  color: var(--red);
+}
+
+.gst {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+/* =======================
+   FEATURES
+======================= */
+.features {
+  margin-top: 20px;
+}
+
+.features li {
+  list-style: none;
+  padding: 6px 0;
+  font-size: 0.9rem;
+  border-bottom: 1px dashed #333;
+}
+
+/* =======================
+   BUTTON
+======================= */
+.btn {
+  margin-top: 25px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--red), #ff3c3c);
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: 0.4s;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #ff3c3c, var(--red));
+  transform: scale(1.05);
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+</style>
 <body class="animsition">
 
 	<!-- Header -->
@@ -176,382 +345,95 @@
 	</section>
 
 
-	<!-- Main menu -->
-	<section class="section-mainmenu p-t-110 p-b-70 bg1-pattern">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-10 col-lg-6 p-r-35 p-r-15-lg m-l-r-auto">
-					<div class="wrap-item-mainmenu p-b-22">
-						<h3 class="tit-mainmenu tit10 p-b-25">
-							STARTERS
-						</h3>
+	<!-- HERO -->
+<section class="hero">
+  <h1><span>Web</span> Development Plans</h1>
+  <p>Premium, Professional & Custom Website Solutions</p>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+
+  <!-- STANDARD -->
+  <div class="card">
+    <div class="plan-title">Standard Plan</div>
+    <div class="plan-sub">Web Development Standard Package</div>
+
+    <div class="price">
+      <del>₹ 10,000</del>
+      <h2>₹ 7,999</h2>
+      <div class="gst">+ 18% GST ₹ 1,440</div>
+    </div>
+
+    <ul class="features">
+  <li>5 Pages Website</li>
+  <li>1 Year Free Domain</li>
+  <li>1 Year Free Cloud Hosting</li>
+  <li>Dynamic Premium Design</li>
+  <li>Admin Dashboard Access</li>
+  <li>Mobile Responsive Design</li>
+  <li>SEO Friendly Structure</li>
+  <li>WhatsApp Chat Integration</li>
+  <li>Live Chat Support</li>
+  <li>Contact Form</li>
+  <li>Google Map Integration</li>
+  <li>Fast Loading Pages</li>
+  <li>SSL Security</li>
+  <li>Social Media Links</li>
+  <li>Basic Animation Effects</li>
+  <li>Image Gallery</li>
+  <li>Blog Section</li>
+  <li>Website Backup</li>
+  <li>Technical Support (1 Year)</li>
+  <li>Annual Renewal ₹4,000</li>
+</ul>
+
+    </ul>
+
+    <a href="tel:+91XXXXXXXXXX" class="btn">Call Now</a>
+  </div>
+
+  <!-- PREMIUM -->
+  <div class="card">
+    <div class="plan-title">Premium Plan</div>
+    <div class="plan-sub">Web Development Premium Package</div>
+
+    <div class="price">
+      <del>₹ 20,000</del>
+      <h2>₹ 13,999</h2>
+      <div class="gst">+ 18% GST ₹ 2,520</div>
+    </div>
+
+    <ul class="features">
+  <li>12 Pages Website</li>
+  <li>1 Year Free Domain & Hosting</li>
+  <li>Premium Dynamic UI</li>
+  <li>Admin Panel</li>
+  <li>Google Search Console Integration</li>
+  <li>WooCommerce Integration</li>
+  <li>10 Professional Email IDs</li>
+  <li>Unlimited Image Uploads</li>
+  <li>Advanced SEO Optimization</li>
+  <li>Payment Gateway Integration</li>
+  <li>WhatsApp & Live Chat Support</li>
+  <li>Product Management System</li>
+  <li>Advanced Animations</li>
+  <li>Speed Optimization</li>
+  <li>SSL & Firewall Security</li>
+  <li>Customer Inquiry System</li>
+  <li>Analytics Integration</li>
+  <li>Backup & Restore</li>
+  <li>Priority Support (1 Year)</li>
+  <li>Annual Renewal ₹6,000</li>
+</ul>
+
+
+    <a href="tel:+91XXXXXXXXXX" class="btn">Call Now</a>
+  </div>
+
+  
+</section>
 
-						<!-- Item mainmenu -->
-						<div class="item-mainmenu m-b-36">
-							<div class="flex-w flex-b m-b-3">
-								<a href="#" class="name-item-mainmenu txt21">
-									Pine nut sbrisalona
-								</a>
-
-								<div class="line-item-mainmenu bg3-pattern"></div>
-
-								<div class="price-item-mainmenu txt22">
-									$29.79
-								</div>
-							</div>
-
-							<span class="info-item-mainmenu txt23">
-								Sed fermentum eros vitae eros
-							</span>
-						</div>
-
-						<!-- Item mainmenu -->
-						<div class="item-mainmenu m-b-36">
-							<div class="flex-w flex-b m-b-3">
-								<a href="#" class="name-item-mainmenu txt21">
-									Aenean eu
-								</a>
-
-								<div class="line-item-mainmenu bg3-pattern"></div>
-
-								<div class="price-item-mainmenu txt22">
-									$19.35
-								</div>
-							</div>
-
-							<span class="info-item-mainmenu txt23">
-								Feugiat maximus neque pharetra
-							</span>
-						</div>
-
-						<!-- Item mainmenu -->
-						<div class="item-mainmenu m-b-36">
-							<div class="flex-w flex-b m-b-3">
-								<a href="#" class="name-item-mainmenu txt21">
-									Sed feugiat
-								</a>
-
-								<div class="line-item-mainmenu bg3-pattern"></div>
-
-								<div class="price-item-mainmenu txt22">
-									$12.19
-								</div>
-							</div>
-
-							<span class="info-item-mainmenu txt23">
-								Proin lacinia nisl ut ultricies posuere nulla
-							</span>
-						</div>
-
-						<!-- Item mainmenu -->
-						<div class="item-mainmenu m-b-36">
-							<div class="flex-w flex-b m-b-3">
-								<a href="#" class="name-item-mainmenu txt21">
-									Consectetur
-								</a>
-
-								<div class="line-item-mainmenu bg3-pattern"></div>
-
-								<div class="price-item-mainmenu txt22">
-									$21.89
-								</div>
-							</div>
-
-							<span class="info-item-mainmenu txt23">
-								Etiam cursus facilisis tortor
-							</span>
-						</div>
-					</div>
-
-					<div class="wrap-item-mainmenu p-b-22">
-						<h3 class="tit-mainmenu tit10 p-b-25">
-							Drinks
-						</h3>
-
-						<!-- Item mainmenu -->
-						<div class="item-mainmenu m-b-36">
-							<div class="flex-w flex-b m-b-3">
-								<a href="#" class="name-item-mainmenu txt21">
-									Vivamus pretium
-								</a>
-
-								<div class="line-item-mainmenu bg3-pattern"></div>
-
-								<div class="price-item-mainmenu txt22">
-									$29.79
-								</div>
-							</div>
-
-							<span class="info-item-mainmenu txt23">
-								Sed fermentum eros vitae eros
-							</span>
-						</div>
-
-						<!-- Item mainmenu -->
-						<div class="item-mainmenu m-b-36">
-							<div class="flex-w flex-b m-b-3">
-								<a href="#" class="name-item-mainmenu txt21">
-									Duis pharetra ligula
-								</a>
-
-								<div class="line-item-mainmenu bg3-pattern"></div>
-
-								<div class="price-item-mainmenu txt22">
-									$19.35
-								</div>
-							</div>
-
-							<span class="info-item-mainmenu txt23">
-								Feugiat maximus neque pharetra
-							</span>
-						</div>
-
-						<!-- Item mainmenu -->
-						<div class="item-mainmenu m-b-36">
-							<div class="flex-w flex-b m-b-3">
-								<a href="#" class="name-item-mainmenu txt21">
-									In eu dolor
-								</a>
-
-								<div class="line-item-mainmenu bg3-pattern"></div>
-
-								<div class="price-item-mainmenu txt22">
-									$53.34
-								</div>
-							</div>
-
-							<span class="info-item-mainmenu txt23">
-								Proin lacinia nisl ut ultricies posuere nulla
-							</span>
-						</div>
-
-						<!-- Item mainmenu -->
-						<div class="item-mainmenu m-b-36">
-							<div class="flex-w flex-b m-b-3">
-								<a href="#" class="name-item-mainmenu txt21">
-									Feugiat maximus
-								</a>
-
-								<div class="line-item-mainmenu bg3-pattern"></div>
-
-								<div class="price-item-mainmenu txt22">
-									$62.45
-								</div>
-							</div>
-
-							<span class="info-item-mainmenu txt23">
-								Sed fermentum eros vitae eros
-							</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-10 col-lg-6 p-l-35 p-l-15-lg m-l-r-auto">
-					<div class="wrap-item-mainmenu p-b-22">
-						<h3 class="tit-mainmenu tit10 p-b-25">
-							Main
-						</h3>
-
-						<!-- Item mainmenu -->
-						<div class="item-mainmenu m-b-36">
-							<div class="flex-w flex-b m-b-3">
-								<a href="#" class="name-item-mainmenu txt21">
-									Duis sed aliquet
-								</a>
-
-								<div class="line-item-mainmenu bg3-pattern"></div>
-
-								<div class="price-item-mainmenu txt22">
-									$31.18
-								</div>
-							</div>
-
-							<span class="info-item-mainmenu txt23">
-								Proin lacinia nisl ut ultricies posuere nulla
-							</span>
-						</div>
-
-						<!-- Item mainmenu -->
-						<div class="item-mainmenu m-b-36">
-							<div class="flex-w flex-b m-b-3">
-								<a href="#" class="name-item-mainmenu txt21">
-									Suspendisse
-								</a>
-
-								<div class="line-item-mainmenu bg3-pattern"></div>
-
-								<div class="price-item-mainmenu txt22">
-									$70.25
-								</div>
-							</div>
-
-							<span class="info-item-mainmenu txt23">
-								Feugiat maximus neque pharetra
-							</span>
-						</div>
-
-						<!-- Item mainmenu -->
-						<div class="item-mainmenu m-b-36">
-							<div class="flex-w flex-b m-b-3">
-								<a href="#" class="name-item-mainmenu txt21">
-									Scelerisque sed
-								</a>
-
-								<div class="line-item-mainmenu bg3-pattern"></div>
-
-								<div class="price-item-mainmenu txt22">
-									$36.19
-								</div>
-							</div>
-
-							<span class="info-item-mainmenu txt23">
-								Etiam cursus facilisis tortor
-							</span>
-						</div>
-
-						<!-- Item mainmenu -->
-						<div class="item-mainmenu m-b-36">
-							<div class="flex-w flex-b m-b-3">
-								<a href="#" class="name-item-mainmenu txt21">
-									Mollis nulla
-								</a>
-
-								<div class="line-item-mainmenu bg3-pattern"></div>
-
-								<div class="price-item-mainmenu txt22">
-									$19.50
-								</div>
-							</div>
-
-							<span class="info-item-mainmenu txt23">
-								Proin lacinia nisl ut ultricies posuere nulla
-							</span>
-						</div>
-
-						<!-- Item mainmenu -->
-						<div class="item-mainmenu m-b-36">
-							<div class="flex-w flex-b m-b-3">
-								<a href="#" class="name-item-mainmenu txt21">
-									Convallis augue
-								</a>
-
-								<div class="line-item-mainmenu bg3-pattern"></div>
-
-								<div class="price-item-mainmenu txt22">
-									$29.15
-								</div>
-							</div>
-
-							<span class="info-item-mainmenu txt23">
-								Sed fermentum eros vitae eros
-							</span>
-						</div>
-
-						<!-- Item mainmenu -->
-						<div class="item-mainmenu m-b-36">
-							<div class="flex-w flex-b m-b-3">
-								<a href="#" class="name-item-mainmenu txt21">
-									Maecenas tristique
-								</a>
-
-								<div class="line-item-mainmenu bg3-pattern"></div>
-
-								<div class="price-item-mainmenu txt22">
-									$29.79
-								</div>
-							</div>
-
-							<span class="info-item-mainmenu txt23">
-								Feugiat maximus neque pharetra
-							</span>
-						</div>
-
-						<!-- Item mainmenu -->
-						<div class="item-mainmenu m-b-36">
-							<div class="flex-w flex-b m-b-3">
-								<a href="#" class="name-item-mainmenu txt21">
-									Duis tincidunt
-								</a>
-
-								<div class="line-item-mainmenu bg3-pattern"></div>
-
-								<div class="price-item-mainmenu txt22">
-									$19.35
-								</div>
-							</div>
-
-							<span class="info-item-mainmenu txt23">
-								Proin lacinia nisl ut ultricies posuere nulla
-							</span>
-						</div>
-					</div>
-
-					<div class="wrap-item-mainmenu p-b-22">
-						<h3 class="tit-mainmenu tit10 p-b-25">
-							Dessert
-						</h3>
-
-						<!-- Item mainmenu -->
-						<div class="item-mainmenu m-b-36">
-							<div class="flex-w flex-b m-b-3">
-								<a href="#" class="name-item-mainmenu txt21">
-									tempus aliquet
-								</a>
-
-								<div class="line-item-mainmenu bg3-pattern"></div>
-
-								<div class="price-item-mainmenu txt22">
-									$9.79
-								</div>
-							</div>
-
-							<span class="info-item-mainmenu txt23">
-								Proin lacinia nisl ut ultricies posuere nulla
-							</span>
-						</div>
-
-						<!-- Item mainmenu -->
-						<div class="item-mainmenu m-b-36">
-							<div class="flex-w flex-b m-b-3">
-								<a href="#" class="name-item-mainmenu txt21">
-									scelerisque
-								</a>
-
-								<div class="line-item-mainmenu bg3-pattern"></div>
-
-								<div class="price-item-mainmenu txt22">
-									$19.35
-								</div>
-							</div>
-
-							<span class="info-item-mainmenu txt23">
-								Sed fermentum eros vitae eros
-							</span>
-						</div>
-
-						<!-- Item mainmenu -->
-						<div class="item-mainmenu m-b-36">
-							<div class="flex-w flex-b m-b-3">
-								<a href="#" class="name-item-mainmenu txt21">
-									Cras maximus
-								</a>
-
-								<div class="line-item-mainmenu bg3-pattern"></div>
-
-								<div class="price-item-mainmenu txt22">
-									$5.79
-								</div>
-							</div>
-
-							<span class="info-item-mainmenu txt23">
-								Duis pharetra ligula at urna dignissim
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 
 
 	<!-- Lunch -->
@@ -563,141 +445,100 @@
 				</h2>
 			</div>
 		</div>
-
-		<div class="container">
-			<div class="row p-t-108 p-b-70">
-				<div class="col-md-8 col-lg-6 m-l-r-auto">
-					<!-- Block3 -->
-					<div class="blo3 flex-w flex-col-l-sm m-b-30">
-						<div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
-							<a href="#"><img src="images/lunch-01.jpg" alt="IMG-MENU"></a>
-						</div>
-
-						<div class="text-blo3 size21 flex-col-l-m">
-							<a href="#" class="txt21 m-b-3">
-								Sed varius
-							</a>
-
-							<span class="txt23">
-								Aenean pharetra tortor dui in pellentesque
-							</span>
-
-							<span class="txt22 m-t-20">
-								$29.79
-							</span>
-						</div>
-					</div>
-
-					<!-- Block3 -->
-					<div class="blo3 flex-w flex-col-l-sm m-b-30">
-						<div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
-							<a href="#"><img src="images/lunch-03.jpg" alt="IMG-MENU"></a>
-						</div>
-
-						<div class="text-blo3 size21 flex-col-l-m">
-							<a href="#" class="txt21 m-b-3">
-								tempus aliquet
-							</a>
-
-							<span class="txt23">
-								Aenean condimentum ante erat
-							</span>
-
-							<span class="txt22 m-t-20">
-								$45.09
-							</span>
-						</div>
-					</div>
-
-					<!-- Block3 -->
-					<div class="blo3 flex-w flex-col-l-sm m-b-30">
-						<div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
-							<a href="#"><img src="images/lunch-05.jpg" alt="IMG-MENU"></a>
-						</div>
-
-						<div class="text-blo3 size21 flex-col-l-m">
-							<a href="#" class="txt21 m-b-3">
-								Duis massa
-							</a>
-
-							<span class="txt23">
-								Proin lacinia nisl ut ultricies posuere nulla
-							</span>
-
-							<span class="txt22 m-t-20">
-								$12.75
-							</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-8 col-lg-6 m-l-r-auto">
-					<!-- Block3 -->
-					<div class="blo3 flex-w flex-col-l-sm m-b-30">
-						<div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
-							<a href="#"><img src="images/lunch-02.jpg" alt="IMG-MENU"></a>
-						</div>
-
-						<div class="text-blo3 size21 flex-col-l-m">
-							<a href="#" class="txt21 m-b-3">
-								sbrisalona
-							</a>
-
-							<span class="txt23">
-								Proin lacinia nisl ut ultricies posuere nulla
-							</span>
-
-							<span class="txt22 m-t-20">
-								$29.79
-							</span>
-						</div>
-					</div>
-
-					<!-- Block3 -->
-					<div class="blo3 flex-w flex-col-l-sm m-b-30">
-						<div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
-							<a href="#"><img src="images/lunch-04.jpg" alt="IMG-MENU"></a>
-						</div>
-
-						<div class="text-blo3 size21 flex-col-l-m">
-							<a href="#" class="txt21 m-b-3">
-								Cras eget magna
-							</a>
-
-							<span class="txt23">
-								Sed fermentum eros vitae eros
-							</span>
-
-							<span class="txt22 m-t-20">
-								$45.09
-							</span>
-						</div>
-					</div>
-
-					<!-- Block3 -->
-					<div class="blo3 flex-w flex-col-l-sm m-b-30">
-						<div class="pic-blo3 size20 bo-rad-10 hov-img-zoom m-r-28">
-							<a href="#"><img src="images/lunch-06.jpg" alt="IMG-MENU"></a>
-						</div>
-
-						<div class="text-blo3 size21 flex-col-l-m">
-							<a href="#" class="txt21 m-b-3">
-								Nullam maximus
-							</a>
-
-							<span class="txt23">
-								Duis massa nibh porttitor nec imperdiet eget
-							</span>
-
-							<span class="txt22 m-t-20">
-								$12.75
-							</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 	</section>
+
+
+
+		<!-- ECOMMERCE -->
+		 <section class="pricing">
+  <div class="card">
+    <div class="plan-title">Premium E-Commerce</div>
+    <div class="plan-sub">Online Store Solution</div>
+
+    <div class="price">
+      <del>₹ 30,000</del>
+      <h2>₹ 21,999</h2>
+      <div class="gst">+ 18% GST ₹ 3,960</div>
+    </div>
+
+    <ul class="features">
+  <li>30 Pages Website</li>
+  <li>30 Products Setup</li>
+  <li>Fully Custom UI Design</li>
+  <li>Premium Theme</li>
+  <li>Admin & Vendor Panel</li>
+  <li>Invoice Generation System</li>
+  <li>Wallet System</li>
+  <li>OTP Login Verification</li>
+  <li>Order Notifications</li>
+  <li>Payment Gateway Integration</li>
+  <li>Cart & Checkout System</li>
+  <li>Product Reviews & Ratings</li>
+  <li>Coupon & Discount System</li>
+  <li>Stock Management</li>
+  <li>Shipping Integration</li>
+  <li>Customer Login Panel</li>
+  <li>Advanced Security Features</li>
+  <li>Speed & SEO Optimization</li>
+  <li>Cloud Backup</li>
+  <li>1 Year Free Support</li>
+</ul>
+
+
+    <a href="tel:+91XXXXXXXXXX" class="btn">Call Now</a>
+  </div>
+
+	<!-- ECOMMERCE -->
+
+		<div class="card">
+    <div class="plan-title">Pro Premium E-Commerce</div>
+    <div class="plan-sub">Online Store Solution</div>
+
+    <div class="price">
+      <del>₹ 39,999</del>
+      <h2>₹ 29,999</h2>
+      <div class="gst">+ 18% GST ₹ 3,960</div>
+    </div>
+
+    <ul class="features">
+  <li>50+ Pages Fully Dynamic Website</li>
+  <li>Unlimited Products Upload</li>
+  <li>Fully Custom UI / UX Design</li>
+  <li>Premium E-Commerce Theme</li>
+  <li>Admin, Vendor & Sub-Admin Panels</li>
+  <li>Advanced Product Management</li>
+  <li>Category & Sub-Category System</li>
+  <li>Smart Search & Filter Options</li>
+  <li>Cart & Secure Checkout System</li>
+  <li>Multiple Payment Gateway Integration</li>
+  <li>Invoice & Order Management System</li>
+  <li>Wallet & Refund System</li>
+  <li>Coupon, Discount & Offer Management</li>
+  <li>OTP Login & Verification System</li>
+  <li>Customer Accounts & Order History</li>
+  <li>Real-Time Order Notifications (SMS / Email / WhatsApp)</li>
+  <li>Shipping & Delivery Integration</li>
+  <li>Stock & Inventory Management</li>
+  <li>Product Reviews & Ratings</li>
+  <li>Advanced SEO Optimization</li>
+  <li>Speed & Performance Optimization</li>
+  <li>SSL, Firewall & Advanced Security</li>
+  <li>Analytics & Sales Reports Dashboard</li>
+  <li>Google Search Console & Analytics Integration</li>
+  <li>Multi-Device Responsive Design</li>
+  <li>Blog & Content Management System</li>
+  <li>Cloud Backup & Restore System</li>
+  <li>Third-Party API Integration</li>
+  <li>Priority Technical Support (1 Year)</li>
+  <li>Dedicated Maintenance & Updates</li>
+</ul>
+
+
+
+    <a href="tel:+91XXXXXXXXXX" class="btn">Call Now</a>
+  </div>
+</section>
+	
 
 
 	<!-- Dinner -->
@@ -1051,6 +892,21 @@
 	<script type="text/javascript" src="vendor/lightbox2/js/lightbox.min.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	
+	<!-- <script>
+// Simple tilt effect for 3D cards
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const x = (window.innerWidth / 2 - e.pageX) / 25;
+    const y = (window.innerHeight / 2 - e.pageY) / 25;
+    card.style.transform = `rotateY(${x}deg) rotateX(${y}deg) translateY(-10px)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = "rotateY(0) rotateX(0)";
+  });
+});
+</script> -->
 
 </body>
 </html>

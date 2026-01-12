@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Contact</title>
+	<title>Menu</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -34,8 +34,173 @@
 <!--===============================================================================================-->
 </head>
 <style>
+	:root {
+  --red: #e50914;
+  --dark: #111;
+  --white: #fff;
+  --gray: #f5f5f5;
+}
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
+body {
+  background: linear-gradient(135deg, #111, #1b1b1b);
+  color: var(--white);
+}
+
+/* =======================
+   3D HEADING
+======================= */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  perspective: 1000px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  transform-style: preserve-3d;
+  animation: float 4s ease-in-out infinite;
+}
+
+.hero h1 span {
+  color: var(--red);
+}
+
+@keyframes float {
+  0% { transform: rotateX(0deg) rotateY(0deg); }
+  50% { transform: rotateX(10deg) rotateY(-10deg); }
+  100% { transform: rotateX(0deg) rotateY(0deg); }
+}
+
+.hero p {
+  color: #ccc;
+  margin-top: 15px;
+  font-size: 1.1rem;
+}
+
+/* =======================
+   PRICING SECTION
+======================= */
+.pricing {
+  padding: 50px 20px 80px;
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: linear-gradient(145deg, #1b1b1b, #0e0e0e);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  transition: 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(229,9,20,0.3), transparent);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(229,9,20,0.4);
+}
+
+.plan-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.plan-sub {
+  color: #aaa;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.price {
+  margin: 20px 0;
+}
+
+.price del {
+  color: #777;
+}
+
+.price h2 {
+  font-size: 2.2rem;
+  color: var(--red);
+}
+
+.gst {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+/* =======================
+   FEATURES
+======================= */
+.features {
+  margin-top: 20px;
+}
+
+.features li {
+  list-style: none;
+  padding: 6px 0;
+  font-size: 0.9rem;
+  border-bottom: 1px dashed #333;
+}
+
+/* =======================
+   BUTTON
+======================= */
+.btn {
+  margin-top: 25px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--red), #ff3c3c);
+  color: var(--white);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: 0.4s;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #ff3c3c, var(--red));
+  transform: scale(1.05);
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
 </style>
 <body class="animsition">
 
@@ -177,146 +342,287 @@
 
 
 	<!-- Title Page -->
-	<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(images/contact.jpg);">
+	<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(images/pricinghero.jpg);">
 		<h2 class="tit6 t-center">
 			
 		</h2>
 	</section>
 
 
+	<!-- HERO -->
+<section class="hero">
+  <h1><span>Basic</span> Web Development Plans</h1>
+  <p>No Customization , Static , User-Friendly</p>
+</section>
 
-	<!-- Contact form -->
-	<section class="contact-section">
-  <div class="container">
+<!-- PRICING -->
+<section class="pricing">
 
-    <h3 class="contact-title">
-      Get in Touch
-    </h3>
-    <p class="contact-subtitle">
-      We’d love to hear from you. Send us a message!
-    </p>
+  <!-- STANDARD -->
+  <div class="card">
+    <div class="plan-title">Basic Dynamic Plan</div>
+    <div class="plan-sub">Web Development Basic Package</div>
 
-   <form class="wrap-form-booking" action="/success" method="POST">
-						<div class="row">
-							<div class="col-md-6">
-								<!-- Date -->
-								<span class="txt9">
-									Date
-								</span>
-
-								<div class="wrap-inputdate pos-relative txt10 size12 bo2 bo-rad-10 m-t-3 m-b-23">
-									<input class="my-calendar bo-rad-10 sizefull txt10 p-l-20" type="text" name="date">
-									<i class="btn-calendar fa fa-calendar ab-r-m hov-pointer m-r-18" aria-hidden="true"></i>
-								</div>
-
-								<!-- Time -->
-								<span class="txt9">
-									Time
-								</span>
-
-								<div class="wrap-inputtime size12 bo2 bo-rad-10 m-t-3 m-b-23">
-									<!-- Select2 -->
-									<select class="selection-1" name="time">
-										<option>9:00</option>
-										<option>9:30</option>
-										<option>10:00</option>
-										<option>10:30</option>
-										<option>11:00</option>
-										<option>11:30</option>
-										<option>12:00</option>
-										<option>12:30</option>
-										<option>13:00</option>
-										<option>13:30</option>
-										<option>14:00</option>
-										<option>14:30</option>
-										<option>15:00</option>
-										<option>15:30</option>
-										<option>16:00</option>
-										<option>16:30</option>
-										<option>17:00</option>
-										<option>17:30</option>
-										<option>18:00</option>
-									</select>
-								</div>
-
-								<!-- People -->
-								<span class="txt9">
-									Mode
-								</span>
-
-								<div class="wrap-inputpeople size12 bo2 bo-rad-10 m-t-3 m-b-23">
-									<!-- Select2 -->
-									<select class="selection-1" name="mode">
-										<option>Offline</option>
-										<option>Online</option>
-									
-									</select>
-								</div>
-							</div>
-
-							<div class="col-md-6">
-								<!-- Name -->
-								<span class="txt9">
-									Name
-								</span>
-
-								<div class="wrap-inputname size12 bo2 bo-rad-10 m-t-3 m-b-23">
-									<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="name" placeholder="Name">
-								</div>
-
-								<!-- Phone -->
-								<span class="txt9">
-									Phone
-								</span>
-
-								<div class="wrap-inputphone size12 bo2 bo-rad-10 m-t-3 m-b-23">
-									<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="phone" placeholder="Phone">
-								</div>
-
-								<!-- Email -->
-								<span class="txt9">
-									Email
-								</span>
-
-								<div class="wrap-inputemail size12 bo2 bo-rad-10 m-t-3 m-b-23">
-									<input class="bo-rad-10 sizefull txt10 p-l-20" type="text" name="email" placeholder="Email">
-								</div>
-							</div>
-						</div>
-
-						<div class="wrap-btn-booking flex-c-m m-t-6">
-							<!-- Button3 -->
-							<button type="submit" class="btn3 flex-c-m size13 txt11 trans-0-4">
-								Book a meeting
-							</button>
-						</div>
-					</form>
-
-    <!-- CONTACT INFO -->
-    <div class="contact-info">
-
-      <div class="info-box">
-        <span>📍</span>
-        <h4>Location</h4>
-        <p>8th Floor, Hudson Street, New York</p>
-      </div>
-
-      <div class="info-box">
-        <span>📞</span>
-        <h4>Call Us</h4>
-        <p>(+1) 96 716 6879</p>
-      </div>
-
-      <div class="info-box">
-        <span>⏰</span>
-        <h4>Working Hours</h4>
-        <p>09:30 AM – 11:00 PM</p>
-      </div>
-
+    <div class="price">
+      <del>₹ 5,999</del>
+      <h2>₹ 3,999</h2>
+      <!-- <div class="gst">+ 18% GST ₹ 1,440</div> -->
     </div>
 
+    <ul class="features">
+  <li>Pre-Designed Template (No Customization)</li>
+  <li>Up to 5 Pages Website</li>
+  <li>Mobile Responsive Layout</li>
+  <li>Contact Form Integration</li>
+  <li>1 Month Free Technical Support</li>
+</ul>
+
+
+
+    <a href="tel:+91XXXXXXXXXX" class="btn">Call Now</a>
+  </div>
+
+  <!-- PREMIUM -->
+  <div class="card">
+    <div class="plan-title">Basic E-Commerce Plan</div>
+    <div class="plan-sub">Web Development Basic Package</div>
+
+    <div class="price">
+      <del>₹ 17,999</del>
+      <h2>₹ 14,999</h2>
+      <!-- <div class="gst">+ 18% GST ₹ 2,520</div> -->
+    </div>
+
+    <ul class="features">
+  <li>Pre-Designed E-Commerce Template (No Customization)</li>
+  <li>Up to 10 Products Upload</li>
+  <li>Cart & Checkout System</li>
+  <li>Single Payment Gateway Integration</li>
+  <li>1 Month Free Technical Support</li>
+</ul>
+
+
+
+    <a href="tel:+91XXXXXXXXXX" class="btn">Call Now</a>
+  </div>
+
+  
+</section>
+
+
+
+
+	<!-- Lunch -->
+	<section class="section-lunch bgwhite">
+		<div class="header-lunch parallax0 parallax100" style="background-image: url(images/standard.jpg);">
+			<div class="bg1-overlay t-center p-t-170 p-b-165">
+				<h2 class="tit4 t-center">
+					Standard Plans
+				</h2>
+			</div>
+		</div>
+	</section>
+
+	<section class="hero">
+  <h1><span>Standard</span> Web Development Plans</h1>
+  <p>Standard & Custom Website Solutions</p>
+</section>
+
+
+	<!-- PRICING -->
+<section class="pricing">
+
+  <!-- STANDARD -->
+  <div class="card">
+    <div class="plan-title">Standard Plan</div>
+    <div class="plan-sub">Web Development Standard Package</div>
+
+    <div class="price">
+      <del>₹ 10,000</del>
+      <h2>₹ 7,999</h2>
+      <div class="gst">+ 18% GST ₹ 1,440</div>
+    </div>
+
+    <ul class="features">
+  <li>5 Pages Website</li>
+  <li>1 Year Free Domain</li>
+  <li>1 Year Free Cloud Hosting</li>
+  <li>Dynamic Premium Design</li>
+  <li>Admin Dashboard Access</li>
+  <li>Mobile Responsive Design</li>
+  <li>SEO Friendly Structure</li>
+  <li>WhatsApp Chat Integration</li>
+  <li>Live Chat Support</li>
+  <li>Contact Form</li>
+  <li>Google Map Integration</li>
+  <li>Fast Loading Pages</li>
+  <li>SSL Security</li>
+  <li>Social Media Links</li>
+  <li>Basic Animation Effects</li>
+  <li>Image Gallery</li>
+  <li>Blog Section</li>
+  <li>Website Backup</li>
+  <li>Technical Support (1 Year)</li>
+  <li>Annual Renewal ₹4,000</li>
+</ul>
+
+    </ul>
+
+    <a href="tel:+91XXXXXXXXXX" class="btn">Call Now</a>
+  </div>
+
+  <!-- PREMIUM -->
+  <div class="card">
+    <div class="plan-title">Premium Plan</div>
+    <div class="plan-sub">Web Development Premium Package</div>
+
+    <div class="price">
+      <del>₹ 20,000</del>
+      <h2>₹ 13,999</h2>
+      <div class="gst">+ 18% GST ₹ 2,520</div>
+    </div>
+
+    <ul class="features">
+  <li>12 Pages Website</li>
+  <li>1 Year Free Domain & Hosting</li>
+  <li>Premium Dynamic UI</li>
+  <li>Admin Panel</li>
+  <li>Google Search Console Integration</li>
+  <li>WooCommerce Integration</li>
+  <li>10 Professional Email IDs</li>
+  <li>Unlimited Image Uploads</li>
+  <li>Advanced SEO Optimization</li>
+  <li>Payment Gateway Integration</li>
+  <li>WhatsApp & Live Chat Support</li>
+  <li>Product Management System</li>
+  <li>Advanced Animations</li>
+  <li>Speed Optimization</li>
+  <li>SSL & Firewall Security</li>
+  <li>Customer Inquiry System</li>
+  <li>Analytics Integration</li>
+  <li>Backup & Restore</li>
+  <li>Priority Support (1 Year)</li>
+  <li>Annual Renewal ₹6,000</li>
+</ul>
+
+
+    <a href="tel:+91XXXXXXXXXX" class="btn">Call Now</a>
+  </div>
+
+  
+</section>
+
+
+	
+
+
+	<!-- Dinner -->
+	<section class="section-dinner bgwhite">
+		<div class="header-dinner parallax0 parallax100" style="background-image: url(images/premium.jpg);">
+			<div class="bg1-overlay t-center p-t-170 p-b-165">
+				<h2 class="tit4 t-center">
+					Premium Plans
+				</h2>
+			</div>
+		</div>
+</section>
+
+<section class="hero">
+  <h1><span>Premium</span> Web Development Plans</h1>
+  <p>Premium, Professional & Custom Website Solutions</p>
+</section>
+				<!-- ECOMMERCE -->
+<section class="pricing">
+  <div class="card">
+    <div class="plan-title">Premium E-Commerce</div>
+    <div class="plan-sub">Online Store Solution</div>
+
+    <div class="price">
+      <del>₹ 30,000</del>
+      <h2>₹ 21,999</h2>
+      <div class="gst">+ 18% GST ₹ 3,960</div>
+    </div>
+
+    <ul class="features">
+  <li>30 Pages Website</li>
+  <li>30 Products Setup</li>
+  <li>Fully Custom UI Design</li>
+  <li>Premium Theme</li>
+  <li>Admin & Vendor Panel</li>
+  <li>Invoice Generation System</li>
+  <li>Wallet System</li>
+  <li>OTP Login Verification</li>
+  <li>Order Notifications</li>
+  <li>Payment Gateway Integration</li>
+  <li>Cart & Checkout System</li>
+  <li>Product Reviews & Ratings</li>
+  <li>Coupon & Discount System</li>
+  <li>Stock Management</li>
+  <li>Shipping Integration</li>
+  <li>Customer Login Panel</li>
+  <li>Advanced Security Features</li>
+  <li>Speed & SEO Optimization</li>
+  <li>Cloud Backup</li>
+  <li>1 Year Free Support</li>
+</ul>
+
+
+    <a href="tel:+91XXXXXXXXXX" class="btn">Call Now</a>
+  </div>
+
+	<!-- ECOMMERCE -->
+
+		<div class="card">
+    <div class="plan-title">Pro Premium E-Commerce</div>
+    <div class="plan-sub">Online Store Solution</div>
+
+    <div class="price">
+      <del>₹ 39,999</del>
+      <h2>₹ 29,999</h2>
+      <div class="gst">+ 18% GST ₹ 3,960</div>
+    </div>
+
+    <ul class="features">
+  <li>50+ Pages Fully Dynamic Website</li>
+  <li>Unlimited Products Upload</li>
+  <li>Fully Custom UI / UX Design</li>
+  <li>Premium E-Commerce Theme</li>
+  <li>Admin, Vendor & Sub-Admin Panels</li>
+  <li>Advanced Product Management</li>
+  <li>Category & Sub-Category System</li>
+  <li>Smart Search & Filter Options</li>
+  <li>Cart & Secure Checkout System</li>
+  <li>Multiple Payment Gateway Integration</li>
+  <li>Invoice & Order Management System</li>
+  <li>Wallet & Refund System</li>
+  <li>Coupon, Discount & Offer Management</li>
+  <li>OTP Login & Verification System</li>
+  <li>Customer Accounts & Order History</li>
+  <li>Real-Time Order Notifications (SMS / Email / WhatsApp)</li>
+  <li>Shipping & Delivery Integration</li>
+  <li>Stock & Inventory Management</li>
+  <li>Product Reviews & Ratings</li>
+  <li>Advanced SEO Optimization</li>
+  <li>Speed & Performance Optimization</li>
+  <li>SSL, Firewall & Advanced Security</li>
+  <li>Analytics & Sales Reports Dashboard</li>
+  <li>Google Search Console & Analytics Integration</li>
+  <li>Multi-Device Responsive Design</li>
+  <li>Blog & Content Management System</li>
+  <li>Cloud Backup & Restore System</li>
+  <li>Third-Party API Integration</li>
+  <li>Priority Technical Support (1 Year)</li>
+  <li>Dedicated Maintenance & Updates</li>
+</ul>
+
+
+
+    <a href="tel:+91XXXXXXXXXX" class="btn">Call Now</a>
   </div>
 </section>
+	
+
+
 
 
 	<!-- Footer -->
@@ -400,17 +706,12 @@
 </footer>
 
 
-
 	<!-- Back to top -->
 	<div class="btn-back-to-top bg0-hov" id="myBtn">
 		<span class="symbol-btn-back-to-top">
 			<i class="fa fa-angle-double-up" aria-hidden="true"></i>
 		</span>
 	</div>
-
-	<!-- Container Selection1 -->
-	<div id="dropDownSelect1"></div>
-
 
 
 <!--===============================================================================================-->
@@ -438,10 +739,22 @@
 <!--===============================================================================================-->
 	<script type="text/javascript" src="vendor/lightbox2/js/lightbox.min.js"></script>
 <!--===============================================================================================-->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
-	<script src="js/map-custom.js"></script>
-<!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	
+	<!-- <script>
+// Simple tilt effect for 3D cards
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const x = (window.innerWidth / 2 - e.pageX) / 25;
+    const y = (window.innerHeight / 2 - e.pageY) / 25;
+    card.style.transform = `rotateY(${x}deg) rotateX(${y}deg) translateY(-10px)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = "rotateY(0) rotateX(0)";
+  });
+});
+</script> -->
 
 </body>
 </html>

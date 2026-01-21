@@ -101,8 +101,11 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 body, html {
 	height: 100%;
 	font-family: Montserrat, sans-serif;
-  font-weight: 400;
+	font-weight: 400;
+	background: linear-gradient(180deg, #050607 0%, #0b0f12 60%, #050607 100%);
+	color: #d1d5db;
 }
+
 
 /* ------------------------------------ */
 a {
@@ -137,7 +140,8 @@ p {
   font-weight: 400;
 	font-size: 15px;
 	line-height: 1.7;
-	color: #666666;
+	color: #a9c1d3;
+
 	margin: 0px;
 }
 
@@ -159,7 +163,7 @@ textarea {
 
 textarea:focus, input:focus {
   border-color: transparent !important;
-  box-shadow: 0 0 0px 2px #ec1d25;
+  box-shadow: 0 0 0px 2px #eaf205;
   -moz-box-shadow: 0 0 0px 2px #ec1d25;
   -webkit-box-shadow: 0 0 0px 2px #ec1d25;
   -o-box-shadow: 0 0 0px 2px #ec1d25;
@@ -489,7 +493,7 @@ input[type="date" i] {
   top: 0;
   left: 0;
   z-index: 100;
-  border-top: 5px solid #ec1d25;
+  border-top: 5px solid rgba(255,255,255,0.08);
 }
 
 .wrap_header {
@@ -509,8 +513,11 @@ input[type="date" i] {
 .header-fixed .wrap-menu-header {
   position: fixed;
   height: 100px;
-  background: rgba(255,255,255,0.9);
-  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+  background: rgba(8,10,12,0.95);
+  backdrop-filter: blur(8px);
+	box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+
+  
 }
 
 /*[ Logo ]
@@ -577,18 +584,20 @@ input[type="date" i] {
   font-weight: 400;
   font-size: 14px;
   text-transform: uppercase;
-  color: white;
+  color: #cfe6f2;
+
   padding: 15px;
 }
 
 .header-fixed .main_menu > li > a {
-  color: #222222;
+  color: #9fb7c9;
 }
 
 .main_menu > li:hover > a {
-  color: #ec1d25;
-  text-decoration: none;
+  color: #ff3b3b;
+  text-shadow: 0 0 12px rgba(255,59,59,0.35);
 }
+
 
 /* ------------------------------------ */
 .sub_menu {
@@ -967,7 +976,9 @@ wrap-slick1-dots {
 ///////////////////////////////////////////////////////////
 */
 .btn1 {
-  background: white;
+	background: linear-gradient(135deg, #0e1419, #1a1f26);
+	color: #ffffff;
+	box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   border-radius: 10px;
 }
 
@@ -980,7 +991,9 @@ wrap-slick1-dots {
 ///////////////////////////////////////////////////////////
 */
 .btn3 {
-  background: #111111;
+  
+	background: linear-gradient(135deg, #050607, #11161c);
+	box-shadow: 0 12px 35px rgba(0,0,0,0.7);
   border-radius: 10px;
 }
 
@@ -1188,7 +1201,7 @@ wrap-slick1-dots {
 }
 
 .wrap-text-blo2 {
-  background-color: white;
+	background: linear-gradient(180deg, #0b0f12, #07090b);
   width: 50%;
   min-height: 390px;
 }
@@ -1273,8 +1286,13 @@ wrap-slick1-dots {
 }
 
 .content-video {
-  background-color: rgba(0,0,0,0.5);
+	background: linear-gradient(
+		180deg,
+		rgba(0,0,0,0.75),
+		rgba(5,7,9,0.95)
+	);
 }
+
 
 /*[ Modal video 01 ]
 -----------------------------------------------------------
@@ -1627,7 +1645,8 @@ body {padding-right: 0px !important;}
 }
 
 	.contact-section{
-  background:#ffffff;
+  background: linear-gradient(180deg, #07090b, #0d1116);
+
   padding:100px 0;
   font-family: 'Poppins', sans-serif;
 }
@@ -1646,10 +1665,12 @@ body {padding-right: 0px !important;}
 }
 
 .contact-form{
-  background:#fff;
+  background: linear-gradient(180deg, #0e1419, #0a0d10);
+	box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+
   padding:40px;
   border-radius:12px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.1);
+ 
 }
 
 .contact-form label{
@@ -1734,7 +1755,8 @@ body {padding-right: 0px !important;}
   }
 }
 .footer-pro{
-  background:#000;
+  background: linear-gradient(180deg, #050607, #020304);
+
   color:#fff;
   padding:80px 0 0;
   font-family:'Poppins', sans-serif;
@@ -1831,7 +1853,9 @@ body {padding-right: 0px !important;}
   margin-top:60px;
   padding:20px 0;
   text-align:center;
-  background:#111;
+  background: #020304;
+	border-top: 1px solid rgba(255,255,255,0.05);
+
   color:#aaa;
   font-size:14px;
 }
@@ -1850,5 +1874,1330 @@ body {padding-right: 0px !important;}
   }
   .contact-item{
     justify-content:center;
+  }
+}
+
+/* =========================================
+   DARK BACKGROUND (SAFE – DOES NOT KILL IMAGES)
+   ========================================= */
+
+/* Only sections that were originally white */
+.contact-section,
+.wrap-text-blo2,
+.bg-white,
+.bg0,
+.bg2 {
+  background-color: #0b0f14 !important;
+}
+
+/* ==================================================
+   DARK CONTENT SECTIONS (SAFE & FINAL)
+   ================================================== */
+
+/* Generic content sections (NOT hero image sections) */
+section:not(.bg-title-page):not(.header-intro):not(.section-video) {
+  background-color: #0b0f14;
+}
+
+/* =========================================
+   ABOUT PAGE – PREMIUM IMAGE POLISH
+   (HERO BLUE THEME)
+========================================= */
+
+/* ---------- COMMON IMAGE WRAPPER ---------- */
+.wrap-pic-delicious,
+.wrap-pic-romantic {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.65);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* Blue glass overlay */
+.wrap-pic-delicious::after,
+.wrap-pic-romantic::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(120,180,255,0.15),
+    rgba(30,60,120,0.25)
+  );
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
+}
+
+/* Hover lift + glow */
+.wrap-pic-delicious:hover,
+.wrap-pic-romantic:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 35px 90px rgba(80,140,255,0.25);
+}
+
+.wrap-pic-delicious:hover::after,
+.wrap-pic-romantic:hover::after {
+  opacity: 1;
+}
+
+/* Slight cinematic zoom */
+.wrap-pic-delicious img,
+.wrap-pic-romantic img {
+  transition: transform 1s ease;
+}
+
+.wrap-pic-delicious:hover img,
+.wrap-pic-romantic:hover img {
+  transform: scale(1.08);
+}
+
+/* ---------- TEAM AVATARS ---------- */
+.pic-blo5 {
+  box-shadow: 0 18px 50px rgba(0,0,0,0.6);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.pic-blo5::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(120,180,255,0.25),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.blo5:hover .pic-blo5 {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 80px rgba(80,140,255,0.35);
+}
+
+.blo5:hover .pic-blo5::after {
+  opacity: 1;
+}
+
+/* ---------- TEAM CARD POLISH ---------- */
+.text-blo5 {
+  background: linear-gradient(180deg, #0e141a, #0a0f14);
+  box-shadow: 0 15px 50px rgba(0,0,0,0.7);
+  transition: transform 0.4s ease;
+}
+
+.blo5:hover .text-blo5 {
+  transform: translateY(-4px);
+}
+
+/* ---------- SIDEBAR GALLERY ---------- */
+.item-gallery-sidebar::after {
+  background-color: rgba(90,150,255,0.55);
+}
+
+/* =========================================
+   ABOUT – SECTION SEPARATORS
+========================================= */
+
+.bg1-pattern,
+.bg2-pattern,
+.section-chef {
+  position: relative;
+}
+
+.bg1-pattern::before,
+.bg2-pattern::before,
+.section-chef::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 140px;
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(120,180,255,0.6),
+    transparent
+  );
+}
+
+/* =========================================
+   ABOUT – TEXT CONTRAST & HIERARCHY
+========================================= */
+
+.bg1-pattern p,
+.bg2-pattern p,
+.section-chef p {
+  color: #c7d7e5;
+  line-height: 1.75;
+}
+
+.bg1-pattern .tit3,
+.bg2-pattern .tit3,
+.section-chef .tit5 {
+  color: #e8f3ff;
+  letter-spacing: 0.03em;
+}
+
+.bg1-pattern .tit2,
+.bg2-pattern .tit2 {
+  color: #8fc5ff;
+}
+
+/* =========================================
+   ABOUT – TITLE SCROLL ANIMATION
+========================================= */
+
+.tit2,
+.tit3,
+.tit5 {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: aboutFadeUp 0.9s ease forwards;
+}
+
+.tit2 { animation-delay: 0.15s; }
+.tit3 { animation-delay: 0.3s; }
+.tit5 { animation-delay: 0.4s; }
+
+@keyframes aboutFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   ABOUT – WORKSPACE HERO POLISH
+========================================= */
+
+.header-intro {
+  position: relative;
+}
+
+.header-intro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10,20,35,0.55),
+    rgba(5,10,18,0.85)
+  );
+}
+
+.header-intro * {
+  position: relative;
+  z-index: 1;
+}
+
+.header-intro .tit2 {
+  color: #9fd0ff;
+}
+
+.header-intro .tit4 {
+  color: #ffffff;
+  text-shadow: 0 10px 40px rgba(0,0,0,0.8);
+}
+
+/* =========================================
+   ABOUT – SERVICE SECTION HIGHLIGHT
+   (PORTFOLIO / WEBPAGES / E-COMMERCE)
+========================================= */
+
+/* Target text blocks */
+.wrap-text-delicious,
+.wrap-text-romantic {
+  position: relative;
+  padding: 35px 30px;
+  border-radius: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(15,22,30,0.75),
+    rgba(8,12,18,0.85)
+  );
+  box-shadow: 0 18px 60px rgba(0,0,0,0.65);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Soft blue outline */
+.wrap-text-delicious::before,
+.wrap-text-romantic::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(120,180,255,0.8),
+    rgba(60,120,220,0.3),
+    rgba(120,180,255,0.8)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.35;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+/* Hover emphasis */
+.wrap-text-delicious:hover,
+.wrap-text-romantic:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 90px rgba(80,140,255,0.25);
+}
+
+.wrap-text-delicious:hover::before,
+.wrap-text-romantic:hover::before {
+  opacity: 0.75;
+}
+
+/* Subtitle accent */
+.wrap-text-delicious .tit2,
+.wrap-text-romantic .tit2 {
+  color: #8fc5ff;
+}
+
+/* Title strength */
+.wrap-text-delicious .tit3,
+.wrap-text-romantic .tit3 {
+  color: #eaf4ff;
+}
+
+/* =========================================
+   CONTACT – HERO POLISH
+========================================= */
+
+.bg-title-page {
+  position: relative;
+}
+
+.bg-title-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10,20,35,0.55),
+    rgba(5,10,18,0.9)
+  );
+}
+
+.bg-title-page * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================
+   CONTACT – SECTION BASE
+========================================= */
+
+.contact-section {
+  background: linear-gradient(180deg, #070b12, #0a0f16);
+}
+
+/* =========================================
+   CONTACT – FORM CARD
+========================================= */
+
+.wrap-form-booking {
+  background: linear-gradient(
+    180deg,
+    rgba(15,22,30,0.85),
+    rgba(8,12,18,0.95)
+  );
+  padding: 45px;
+  border-radius: 18px;
+  box-shadow: 0 30px 90px rgba(0,0,0,0.75);
+  position: relative;
+}
+
+/* Blue outline glow */
+.wrap-form-booking::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(120,180,255,0.8),
+    rgba(60,120,220,0.3),
+    rgba(120,180,255,0.8)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* =========================================
+   CONTACT – INPUTS & SELECTS
+========================================= */
+
+.wrap-inputname,
+.wrap-inputphone,
+.wrap-inputemail,
+.wrap-inputdate,
+.wrap-inputtime,
+.wrap-inputpeople {
+  background-color: #0e141b;
+  border: 1px solid rgba(120,180,255,0.15);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wrap-inputname:hover,
+.wrap-inputphone:hover,
+.wrap-inputemail:hover,
+.wrap-inputdate:hover,
+.wrap-inputtime:hover,
+.wrap-inputpeople:hover {
+  border-color: rgba(120,180,255,0.45);
+}
+
+.wrap-inputname input,
+.wrap-inputphone input,
+.wrap-inputemail input,
+.wrap-inputdate input {
+  color: #e5f1fb;
+}
+
+.wrap-inputname input::placeholder,
+.wrap-inputphone input::placeholder,
+.wrap-inputemail input::placeholder {
+  color: #8faac2;
+}
+
+/* =========================================
+   CONTACT – PRIMARY BUTTON
+========================================= */
+
+.wrap-btn-booking .btn3 {
+  background: linear-gradient(
+    135deg,
+    #1a3b6f,
+    #2f6fd1
+  );
+  box-shadow: 0 15px 45px rgba(80,140,255,0.45);
+}
+
+.wrap-btn-booking .btn3:hover {
+  background: linear-gradient(
+    135deg,
+    #2f6fd1,
+    #4f8dff
+  );
+}
+
+/* =========================================
+   CONTACT – INFO BOXES
+========================================= */
+
+.info-box {
+  background: linear-gradient(
+    180deg,
+    #0e141b,
+    #0a0f16
+  );
+  border-radius: 16px;
+  border: 1px solid rgba(120,180,255,0.15);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.6);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.info-box h4 {
+  color: #eaf4ff;
+}
+
+.info-box p {
+  color: #9fb7c9;
+}
+
+.info-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 90px rgba(80,140,255,0.35);
+}
+
+/* =========================================
+   CONTACT – TITLES
+========================================= */
+
+.contact-title {
+  color: #eaf4ff;
+  letter-spacing: 0.04em;
+}
+
+.contact-subtitle {
+  color: #9fb7c9;
+}
+
+/* =========================================
+   FIX DATE INPUT VISIBILITY
+========================================= */
+
+.wrap-inputdate input,
+.my-calendar {
+  color: #eaf4ff !important;
+  background-color: transparent;
+}
+
+.wrap-inputdate input::placeholder {
+  color: #9fb7c9;
+}
+/* =========================================
+   DATEPICKER – HERO BLUE THEME
+========================================= */
+
+.daterangepicker td.active,
+.daterangepicker td.active:hover {
+  background-color: #4f8dff !important;
+  color: #ffffff !important;
+}
+
+.daterangepicker td:hover {
+  background-color: rgba(79,141,255,0.25);
+}
+
+.daterangepicker .calendar-table {
+  background-color: #0e141b;
+  color: #eaf4ff;
+}
+
+.daterangepicker th {
+  color: #9fd0ff;
+}
+
+/* =========================================
+   SELECT2 – REMOVE RED, USE BLUE
+========================================= */
+
+.select2-container--default
+.select2-results__option--highlighted[aria-selected] {
+  background-color: #4f8dff !important;
+  color: #ffffff !important;
+}
+
+.select2-container--default
+.select2-results__option[aria-selected=true] {
+  background-color: rgba(79,141,255,0.25) !important;
+  color: #eaf4ff !important;
+}
+
+/* =========================================
+   SELECT INPUT TEXT VISIBILITY
+========================================= */
+
+.select2-selection__rendered {
+  color: #eaf4ff !important;
+}
+
+.select2-container .select2-selection--single {
+  background-color: #0e141b;
+}
+/* =========================================
+   REMOVE RED FOCUS / SHADOWS
+========================================= */
+
+textarea:focus,
+input:focus {
+  box-shadow: 0 0 0 2px rgba(79,141,255,0.45) !important;
+}
+/* ************************************************* */
+
+/* =========================================
+   GLOBAL SMOOTHNESS
+========================================= */
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+/* =========================================
+   LINK MICRO-INTERACTION
+========================================= */
+
+a {
+  position: relative;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    #4f8dff,
+    #9fd0ff
+  );
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* =========================================
+   SECTION RHYTHM
+========================================= */
+
+section {
+  padding-top: clamp(80px, 10vw, 130px);
+  padding-bottom: clamp(80px, 10vw, 130px);
+}
+
+/* =========================================
+   CARD DEPTH CONSISTENCY
+========================================= */
+
+.blo5,
+.wrap-form-booking,
+.info-box,
+.wrap-text-delicious,
+.wrap-text-romantic {
+  backdrop-filter: blur(6px);
+}
+
+/* =========================================
+   BUTTON PREMIUM FEEL
+========================================= */
+
+button,
+.btn1,
+.btn2,
+.btn3 {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.3s ease;
+}
+
+button:hover,
+.btn1:hover,
+.btn2:hover,
+.btn3:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   IMAGE FADE-IN
+========================================= */
+
+img {
+  opacity: 0;
+  animation: imgFade 0.8s ease forwards;
+}
+
+@keyframes imgFade {
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   CLEAN VISUAL NOISE
+========================================= */
+
+hr,
+.line-separate {
+  opacity: 0.4;
+}
+/* ***************************************** */
+/* =========================================
+   BRAND COLOR – HOME PAGE
+========================================= */
+
+:root {
+  --brand-blue-1: #4f8dff;
+  --brand-blue-2: #9fd0ff;
+  --brand-blue-soft: #8fc5ff;
+}
+
+/* =========================================
+   REMOVE RED (HOME)
+========================================= */
+
+.section-slide *,
+.section-welcome *,
+.section-intro *,
+.section-ourmenu *,
+.section-booking * {
+  --red: unset;
+}
+
+.color0-hov:hover,
+.btn1:hover,
+.btn2:hover,
+.btn3:hover {
+  color: var(--brand-blue-2) !important;
+  background-color: transparent;
+}
+
+/* =========================================
+   HERO POLISH
+========================================= */
+
+.caption1-slide1 {
+  color: #cfe6f2;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.caption2-slide1 {
+  background: linear-gradient(
+    90deg,
+    var(--brand-blue-2),
+    var(--brand-blue-1)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.wrap-btn-slide1 .btn1 {
+  background: linear-gradient(
+    135deg,
+    #0e1b2c,
+    #132844
+  );
+  border: 1px solid rgba(143,197,255,0.25);
+}
+
+.wrap-btn-slide1 .btn1:hover {
+  box-shadow: 0 0 40px rgba(79,141,255,0.35);
+}
+
+/* =========================================
+   WELCOME SECTION
+========================================= */
+
+.wrap-text-welcome .tit2 {
+  color: var(--brand-blue-soft);
+  letter-spacing: 0.2em;
+}
+
+.wrap-text-welcome h3 {
+  color: #e5f1fb;
+}
+
+.wrap-text-welcome p {
+  color: #9fb7c9;
+}
+
+/* =========================================
+   SERVICES CARDS (STATIC / DYNAMIC / ECOM)
+========================================= */
+
+.blo1 {
+  background: linear-gradient(
+    180deg,
+    #0b0f14,
+    #06080c
+  );
+  border: 1px solid rgba(143,197,255,0.12);
+  border-radius: 14px;
+  transition: all 0.4s ease;
+}
+
+.blo1:hover {
+  transform: translateY(-6px);
+  border-color: rgba(143,197,255,0.45);
+  box-shadow: 0 20px 50px rgba(79,141,255,0.25);
+}
+
+.wrap-text-blo1 h4 {
+  color: #e5f1fb;
+}
+
+.wrap-text-blo1 p {
+  color: #9fb7c9;
+}
+
+/* =========================================
+   IMAGE OVERLAYS (OUR WORKS)
+========================================= */
+
+.item-ourmenu::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(79,141,255,0.15),
+    rgba(5,7,11,0.95)
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.item-ourmenu:hover::after {
+  opacity: 1;
+}
+
+.item-ourmenu .btn2 {
+  background: rgba(15,25,40,0.85);
+  border: 1px solid rgba(143,197,255,0.25);
+  color: var(--brand-blue-soft);
+}
+
+/* =========================================
+   BOOKING FORM (HOME)
+========================================= */
+
+.wrap-form-booking input,
+.wrap-form-booking select {
+  background-color: #0b0f14;
+  color: #e5f1fb;
+  border: 1px solid rgba(143,197,255,0.18);
+}
+
+.wrap-form-booking input:focus,
+.wrap-form-booking select:focus {
+  border-color: var(--brand-blue-1);
+  box-shadow: 0 0 0 3px rgba(79,141,255,0.25);
+}
+
+.txt9 {
+  color: #9fb7c9;
+}
+
+/* =========================================
+   MICRO POLISH
+========================================= */
+
+section {
+  scroll-margin-top: 120px;
+}
+
+img {
+  filter: contrast(1.03) saturate(1.05);
+}
+
+
+
+
+/* =========================================
+   HERO – "WELCOME TO" SIGNATURE STYLE
+========================================= */
+
+.caption1-slide1 {
+  font-family: 'Courgette', cursive;
+  font-size: 75px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #6FAEFF
+;
+}
+
+/* ======================
+   HEADER LOGO FIX
+====================== */
+
+.logo img {
+  height: 42px;        /* 🔥 Ideal premium size */
+  width: auto;
+  max-height: none;
+  opacity: 0.95;
+  transition: all 0.3s ease;
+}
+
+/* Optional: slightly brighter on hover */
+.logo img:hover {
+  opacity: 1;
+}
+
+/* =========================================
+   FOOTER – REMOVE RED & APPLY BRAND BLUE
+========================================= */
+
+.footer-pro {
+  background: linear-gradient(180deg, #050607, #020304);
+}
+
+/* Footer section titles underline */
+.footer-col h4::after {
+  background: linear-gradient(
+    90deg,
+    #4f8dff,
+    #9fd0ff
+  );
+}
+
+/* Brand name accent */
+.brand span {
+  color: #4f8dff;
+}
+
+/* Footer links hover */
+.footer-col ul li a:hover {
+  color: #9fd0ff;
+}
+
+/* Contact icons */
+.contact-item i {
+  color: #4f8dff;
+}
+
+/* Social icons */
+.social-icons a {
+  border: 1px solid rgba(143,197,255,0.25);
+}
+
+.social-icons a:hover {
+  background: #4f8dff;
+  border-color: #4f8dff;
+  color: #ffffff;
+}
+
+/* Footer bottom separator */
+.footer-bottom {
+  border-top: 1px solid rgba(143,197,255,0.15);
+}
+
+
+
+.caption1-slide1,
+.caption2-slide1 {
+  opacity: 0;
+  transform: scale(1.04);
+  animation: heroReveal 1.8s ease forwards;
+}
+
+.caption2-slide1 {
+  animation-delay: 0.35s;
+}
+
+@keyframes heroReveal {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.caption1-slide1,
+.caption2-slide1 {
+  transition:
+    filter 0.5s ease,
+    letter-spacing 0.5s ease;
+}
+
+.caption1-slide1:hover,
+.caption2-slide1:hover {
+  filter: brightness(1.08) contrast(1.05);
+  letter-spacing: 0.1em;
+}
+
+.caption2-slide1 {
+  position: relative;
+}
+
+.caption2-slide1::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #8fc5ff,
+    transparent
+  );
+  transform: translateX(-50%);
+  transition: width 0.6s ease;
+}
+
+.caption2-slide1:hover::after {
+  width: 65%;
+}
+.section-slide:hover .caption1-slide1,
+.section-slide:hover .caption2-slide1 {
+  filter: brightness(1.1);
+}
+
+/* =========================================
+   NAVIGATION – REMOVE RED, USE BRAND BLUE
+========================================= */
+
+/* Main nav links */
+.main_menu > li > a {
+  color: #cfe6f2;
+  transition: color 0.35s ease, text-shadow 0.35s ease;
+}
+
+/* Hover state */
+.main_menu > li:hover > a {
+  color: var(--brand-blue-2) !important;
+  text-shadow: 0 0 14px rgba(159,208,255,0.35);
+}
+
+/* Active page */
+.main_menu > li.active > a {
+  color: var(--brand-blue-1) !important;
+}
+
+/* Remove global red hover from links */
+a:hover {
+  color: var(--brand-blue-2) !important;
+}
+.main_menu > li > a {
+  position: relative;
+}
+
+.main_menu > li > a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--brand-blue-2),
+    transparent
+  );
+  transform: translateX(-50%);
+  transition: width 0.35s ease;
+}
+
+.main_menu > li:hover > a::after {
+  width: 70%;
+}
+
+/* =========================================
+   ABOUT – TEXT SHOULD BE BRIGHT BY DEFAULT
+========================================= */
+
+.tit2,
+.tit3,
+.tit5 {
+  color: #eaf4ff;     /* bright premium white-blue */
+  opacity: 1;         /* 🔥 important */
+}
+/* =========================================
+   PREMIUM FADE-IN (NO DULL TEXT)
+========================================= */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: fadeUpSoft 1s ease forwards;
+}
+
+@keyframes fadeUpSoft {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* =========================================
+   HERO – BLUE GLASS MIRROR (SAFE)
+========================================= */
+
+.section-slide {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Blue glass tint (lighter, premium) */
+.section-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(20,45,90,0.45),
+    rgba(10,25,55,0.65)
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Soft blue reflection (NOT blocking animation) */
+.section-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(160,200,255,0.14),
+    rgba(120,170,255,0.06),
+    transparent 65%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* =========================================
+   HERO – KEEP ANIMATIONS WORKING
+========================================= */
+
+.item-slick1 {
+  position: relative;
+}
+
+.wrap-content-slide1,
+.caption1-slide1,
+.caption2-slide1,
+.wrap-btn-slide1 {
+  position: relative;
+  z-index: 5;
+  opacity: 1;
+}
+
+/* Animation visibility safeguard */
+.animated,
+.fade-up {
+  opacity: 1 !important;
+}
+
+.caption1-slide1 {
+  color: #cfe6ff;
+  text-shadow: 0 6px 25px rgba(0,0,0,0.5);
+}
+
+.caption2-slide1 {
+  text-shadow:
+    0 12px 45px rgba(0,0,0,0.8),
+    0 0 35px rgba(120,170,255,0.45);
+}
+
+
+
+
+/* =========================================
+   HERO – SOFT PREMIUM BLUE GLASS
+========================================= */
+
+.section-slide {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ultra-subtle blue glass */
+.section-slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(30,70,140,0.28),
+    rgba(18,40,85,0.38)
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Soft luxury reflection (very light) */
+.section-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(200,220,255,0.10),
+    rgba(160,190,255,0.04),
+    transparent 70%
+  );
+  opacity: 0.25;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.wrap-content-slide1,
+.caption1-slide1,
+.caption2-slide1,
+.wrap-btn-slide1 {
+  position: relative;
+  z-index: 5;
+}
+
+/* HERO TEXT – FLOATING RICHNESS */
+.caption1-slide1 {
+  color: #d6ecff;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.45);
+}
+
+.caption2-slide1 {
+  text-shadow:
+    0 10px 35px rgba(0,0,0,0.75),
+    0 0 28px rgba(120,170,255,0.35);
+}
+
+
+
+/* =========================================
+   RESERVATION IMAGE – PREMIUM BOUNDARY BOX
+========================================= */
+
+.reservation-image {
+  position: relative;
+  border-radius: 20px;
+  padding: 1.5px; /* creates the boundary */
+  background: linear-gradient(
+    135deg,
+    rgba(143,197,255,0.55),
+    rgba(79,141,255,0.15),
+    rgba(143,197,255,0.55)
+  );
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.65),
+    inset 0 0 0 1px rgba(255,255,255,0.03);
+  transition:
+    transform 0.6s ease,
+    box-shadow 0.6s ease,
+    background 0.6s ease;
+}
+
+/* Inner container */
+.reservation-image > img {
+  width: 100%;
+  display: block;
+  border-radius: 18px;
+  background: #070b12;
+  transition:
+    transform 1.2s ease,
+    filter 0.9s ease;
+  filter:
+    brightness(0.96)
+    contrast(1.02)
+    saturate(1.02);
+}
+
+/* Hover polish */
+.reservation-image:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 40px 110px rgba(0,0,0,0.75),
+    0 0 55px rgba(79,141,255,0.28);
+  background: linear-gradient(
+    135deg,
+    rgba(143,197,255,0.75),
+    rgba(79,141,255,0.25),
+    rgba(143,197,255,0.75)
+  );
+}
+
+/* Image hover effect */
+.reservation-image:hover > img {
+  transform: scale(1.05);
+  filter:
+    brightness(1.08)
+    contrast(1.08)
+    saturate(1.08);
+}
+
+
+.reservation-image {
+  animation: reservationReveal 1.1s ease forwards;
+}
+
+@keyframes reservationReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   RESERVATION IMAGE – PREMIUM POLISH (FIXED)
+========================================= */
+
+.wrap-pic-booking {
+  position: relative;
+  border-radius: 18px;
+  padding: 2px; /* premium boundary */
+  background: linear-gradient(
+    135deg,
+    rgba(143,197,255,0.55),
+    rgba(79,141,255,0.18),
+    rgba(143,197,255,0.55)
+  );
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.7),
+    inset 0 0 0 1px rgba(255,255,255,0.04);
+  transition:
+    transform 0.6s ease,
+    box-shadow 0.6s ease,
+    background 0.6s ease;
+}
+
+/* Image itself */
+.wrap-pic-booking img {
+  display: block;
+  width: 100%;
+  border-radius: 16px;
+  transition:
+    transform 1s ease,
+    filter 0.9s ease;
+  filter:
+    brightness(0.96)
+    contrast(1.03)
+    saturate(1.04);
+}
+
+/* Hover effect */
+.wrap-pic-booking:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 45px 120px rgba(0,0,0,0.8),
+    0 0 60px rgba(79,141,255,0.3);
+  background: linear-gradient(
+    135deg,
+    rgba(143,197,255,0.75),
+    rgba(79,141,255,0.28),
+    rgba(143,197,255,0.75)
+  );
+}
+
+/* Hover polish on image */
+.wrap-pic-booking:hover img {
+  transform: scale(1.05);
+  filter:
+    brightness(1.08)
+    contrast(1.08)
+    saturate(1.08);
+}
+.wrap-pic-booking {
+  opacity: 0;
+  animation: bookingFade 1s ease forwards;
+}
+
+@keyframes bookingFade {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

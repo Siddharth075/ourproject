@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Menu</title>
+	<title>Price</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -35,21 +35,15 @@
 </head>
 <style>
 	:root {
-  --red: #e50914;
-  --dark: #111;
-  --white: #fff;
+  --blue: #8fc5ff;
+  --blue-soft: #5fa8ff;
+  --dark: #0b0f14;
+  --white: #ffffff;
   --gray: #f5f5f5;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
 body {
-  background: linear-gradient(135deg, #111, #1b1b1b);
+  background: linear-gradient(135deg, #050607, #0b0f14);
   color: var(--white);
 }
 
@@ -72,7 +66,7 @@ body {
 }
 
 .hero h1 span {
-  color: var(--red);
+  color: var(--blue);
 }
 
 @keyframes float {
@@ -82,7 +76,7 @@ body {
 }
 
 .hero p {
-  color: #ccc;
+  color: #9fb7c9;
   margin-top: 15px;
   font-size: 1.1rem;
 }
@@ -100,20 +94,26 @@ body {
 }
 
 .card {
-  background: linear-gradient(145deg, #1b1b1b, #0e0e0e);
+  background: linear-gradient(145deg, #0e1419, #07090b);
   border-radius: 20px;
   padding: 30px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.7);
   transition: 0.4s;
   position: relative;
   overflow: hidden;
 }
 
+/* 🔵 Gradient sweep animation (same animation, blue tone) */
 .card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, transparent, rgba(229,9,20,0.3), transparent);
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(143,197,255,0.25),
+    transparent
+  );
   opacity: 0;
   transition: 0.4s;
 }
@@ -124,17 +124,16 @@ body {
 
 .card:hover {
   transform: translateY(-15px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(229,9,20,0.4);
+  box-shadow: 0 30px 60px var(--blue-glow);
 }
 
 .plan-title {
   font-size: 1.4rem;
   font-weight: 600;
-  margin-bottom: 5px;
 }
 
 .plan-sub {
-  color: #aaa;
+  color: #8fa8bf;
   font-size: 0.9rem;
   margin-bottom: 20px;
 }
@@ -144,17 +143,17 @@ body {
 }
 
 .price del {
-  color: #777;
+  color: #6b7280;
 }
 
 .price h2 {
   font-size: 2.2rem;
-  color: var(--red);
+  color: var(--blue);
 }
 
 .gst {
   font-size: 0.85rem;
-  color: #ccc;
+  color: #9fb7c9;
 }
 
 /* =======================
@@ -168,7 +167,7 @@ body {
   list-style: none;
   padding: 6px 0;
   font-size: 0.9rem;
-  border-bottom: 1px dashed #333;
+  border-bottom: 1px dashed rgba(255,255,255,0.08);
 }
 
 /* =======================
@@ -180,8 +179,8 @@ body {
   width: 100%;
   text-align: center;
   padding: 14px;
-  background: linear-gradient(135deg, var(--red), #ff3c3c);
-  color: var(--white);
+  background: linear-gradient(135deg, var(--blue), var(--blue-soft));
+  color: #050607;
   font-weight: 600;
   text-decoration: none;
   border-radius: 50px;
@@ -189,7 +188,7 @@ body {
 }
 
 .btn:hover {
-  background: linear-gradient(135deg, #ff3c3c, var(--red));
+  background: linear-gradient(135deg, var(--blue-soft), var(--blue));
   transform: scale(1.05);
 }
 
@@ -201,6 +200,82 @@ body {
     font-size: 2.5rem;
   }
 }
+
+/* ===========================
+   PREMIUM ANIMATED BORDER
+=========================== */
+
+.card {
+  position: relative;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(143,197,255,0.6),
+    transparent
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+
+/* ===========================
+   TYPOGRAPHY SYNC (HERO MATCH)
+=========================== */
+
+/* Plan title */
+.plan-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #e5f1fb;
+  text-transform: uppercase;
+}
+
+/* Price amount */
+.price h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #8fc5ff;
+}
+
+/* Small supporting text */
+.plan-sub,
+.gst {
+  color: #9fb7c9;
+  font-size: 0.95rem;
+}
+
+/* Feature list */
+.features li {
+  color: #c7d7e5;
+  font-size: 0.95rem;
+}
+
+/* Button text */
+.btn {
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
 </style>
 <body class="animsition">
 
@@ -212,8 +287,8 @@ body {
 				<div class="wrap_header trans-0-3">
 					<!-- Logo -->
 					<div class="logo">
-						<a href="index.html">
-							<img src="images/icons/logo.png" alt="IMG-LOGO" data-logofixed="images/icons/logo2.png">
+						<a href="/">
+							<img src="images/logoo.png" alt="IMG-LOGO" data-logofixed="images/logoo.png">
 						</a>
 					</div>
 
@@ -284,65 +359,14 @@ body {
 				<a href="/contact" class="txt19">Contact</a>
 			</li>
 
-			<li class="t-center">
-				<!-- Button3 -->
-				<a href="reservation.html" class="btn3 flex-c-m size13 txt11 trans-0-4 m-l-r-auto">
-					Reservation
-				</a>
-			</li>
+		
 		</ul>
 
-		<!-- - -->
-		<div class="gallery-sidebar t-center p-l-60 p-r-60 p-b-40">
-			<!-- - -->
-			<h4 class="txt20 m-b-33">
-				Our Works
-			</h4>
-
-			<!-- Gallery -->
-			<div class="wrap-gallery-sidebar flex-w">
-				<a class="item-gallery-sidebar wrap-pic-w" href="images/photo-gallery-01.jpg" data-lightbox="gallery-footer">
-					<img src="images/photo-gallery-thumb-01.jpg" alt="GALLERY">
-				</a>
-
-				<a class="item-gallery-sidebar wrap-pic-w" href="images/photo-gallery-02.jpg" data-lightbox="gallery-footer">
-					<img src="images/photo-gallery-thumb-02.jpg" alt="GALLERY">
-				</a>
-
-				<a class="item-gallery-sidebar wrap-pic-w" href="images/photo-gallery-03.jpg" data-lightbox="gallery-footer">
-					<img src="images/photo-gallery-thumb-03.jpg" alt="GALLERY">
-				</a>
-
-				<a class="item-gallery-sidebar wrap-pic-w" href="images/photo-gallery-05.jpg" data-lightbox="gallery-footer">
-					<img src="images/photo-gallery-thumb-05.jpg" alt="GALLERY">
-				</a>
-
-				<a class="item-gallery-sidebar wrap-pic-w" href="images/photo-gallery-06.jpg" data-lightbox="gallery-footer">
-					<img src="images/photo-gallery-thumb-06.jpg" alt="GALLERY">
-				</a>
-
-				<a class="item-gallery-sidebar wrap-pic-w" href="images/photo-gallery-07.jpg" data-lightbox="gallery-footer">
-					<img src="images/photo-gallery-thumb-07.jpg" alt="GALLERY">
-				</a>
-
-				<a class="item-gallery-sidebar wrap-pic-w" href="images/photo-gallery-09.jpg" data-lightbox="gallery-footer">
-					<img src="images/photo-gallery-thumb-09.jpg" alt="GALLERY">
-				</a>
-
-				<a class="item-gallery-sidebar wrap-pic-w" href="images/photo-gallery-10.jpg" data-lightbox="gallery-footer">
-					<img src="images/photo-gallery-thumb-10.jpg" alt="GALLERY">
-				</a>
-
-				<a class="item-gallery-sidebar wrap-pic-w" href="images/photo-gallery-11.jpg" data-lightbox="gallery-footer">
-					<img src="images/photo-gallery-thumb-11.jpg" alt="GALLERY">
-				</a>
-			</div>
-		</div>
 	</aside>
 
 
 	<!-- Title Page -->
-	<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(images/pricinghero.jpg);">
+	<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url(images/prices.jpg);">
 		<h2 class="tit6 t-center">
 			
 		</h2>

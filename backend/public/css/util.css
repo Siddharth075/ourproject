@@ -3826,3 +3826,104 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
 		align-items: center;
 	}
 }
+
+/* =========================================================
+   RED → HERO BLUE CONVERSION (Premium Accent)
+   ========================================================= */
+
+/* Text color replacements */
+.color0,
+.txt3,
+.txt7,
+.txt15,
+.txt24,
+.tit2 {
+  color: #8fc5ff;
+}
+
+/* Hover color replacements */
+.color0-hov:hover,
+.c-hov-white:hover {
+  color: #8fc5ff;
+}
+
+/* Background replacements (if any text relied on red bg) */
+.bg0,
+.bg0-hov:hover {
+  background-color: rgba(143, 197, 255, 0.15);
+}
+
+/* Border replacements */
+.bo4 {
+  border-color: #8fc5ff;
+}
+
+/* Hover effect accent */
+.hov1:hover {
+  background-color: rgba(143, 197, 255, 0.25);
+  color: #d6ebf7;
+}
+
+
+/* ===============================
+   GLOBAL SECTION BACKGROUND FIX
+   =============================== */
+
+/* ===============================
+   GLOBAL SECTION BACKGROUND FIX
+   (DO NOT TOUCH HERO SECTIONS)
+   =============================== */
+
+section:not(.bg-title-page):not(.parallax0),
+.contact-section,
+.wrap-text-blo2 {
+  background: linear-gradient(
+    180deg,
+    #0b0f14,
+    #080b10
+  );
+}
+
+/* Keep bg utility colors intact */
+.bg0 { background-color: rgba(143,197,255,0.15); }
+.bg2 { background-color: #080b10; }
+
+
+
+/* ===============================
+   BLACK TEXT → PREMIUM BRIGHT
+   =============================== */
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.contact-title,
+.footer-col h4 {
+  color: #d8eaff !important;
+}
+
+/* Paragraphs & normal text */
+p,
+.contact-subtitle,
+.footer-text,
+.footer-col ul li a {
+  color: #a9c1d9 !important;
+}
+
+/* Muted / helper text */
+small,
+.footer-bottom,
+.info-box p {
+  color: #7f9bb5 !important;
+}
+
+/* ======================================
+   HERO-LIKE BLUE ACCENT TEXT
+   ====================================== */
+
+/* Small intro / accent text */
+.txt3,
+.txt7,
+.txt15,
+.color0 {
+  color: #8fc5ff !important;
+}

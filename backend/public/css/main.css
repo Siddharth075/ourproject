@@ -1852,3 +1852,210 @@ body {padding-right: 0px !important;}
     justify-content:center;
   }
 }
+
+/* ********************************************/ 
+
+/* ===============================
+   GLOBAL BLUE THEME OVERRIDE
+   =============================== */
+
+:root {
+  --blue-main: #4f8dff;
+  --blue-soft: #78b2ff;
+  --blue-glow: rgba(79,141,255,0.35);
+  --dark-main: #020812;
+  --dark-soft: #050d18;
+  --border-soft: rgba(255,255,255,0.08);
+  --text-main: #e7f1ff;
+  --text-soft: #b7cce5;
+}
+
+/* BODY */
+body {
+  background: radial-gradient(circle at top, #071425, #020812 70%);
+  color: var(--text-main);
+}
+
+/* LINKS */
+a:hover {
+  color: var(--blue-main) !important;
+}
+
+/* HEADER */
+.wrap-menu-header {
+  border-top: 4px solid var(--blue-main);
+  background: linear-gradient(180deg, rgba(5,12,22,0.85), rgba(5,12,22,0.55));
+  backdrop-filter: blur(14px);
+}
+
+.header-fixed .wrap-menu-header {
+  background: rgba(5,12,22,0.9);
+}
+
+/* NAV */
+.main_menu > li > a {
+  color: var(--text-soft);
+}
+
+.main_menu > li:hover > a {
+  color: var(--blue-main);
+  text-shadow: 0 0 12px var(--blue-glow);
+}
+
+/* SOCIAL */
+.social a:hover {
+  color: var(--blue-main);
+}
+
+/* BUTTON GLOBAL */
+.btn1, .btn2, .btn3 {
+  background: linear-gradient(135deg, #1c5ed8, #4f8dff) !important;
+  color: white !important;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(79,141,255,0.35);
+}
+
+.btn1:hover, .btn2:hover, .btn3:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 20px 55px rgba(79,141,255,0.55);
+}
+
+/* SLIDER ARROWS */
+.arrow-slick1:hover,
+.arrow-slick2:hover,
+.arrow-slick3:hover {
+  background-color: var(--blue-main);
+}
+
+/* DOTS */
+.slick1-dots li button:hover,
+.slick1-dots li.slick-active button,
+.slick2-dots li button:hover,
+.slick2-dots li.slick-active button,
+.slick3-dots li button:hover,
+.slick3-dots li.slick-active button {
+  background-color: var(--blue-main);
+  border-color: white;
+}
+
+/* HERO TEXT */
+.caption1-slide1 {
+  color: var(--blue-soft);
+  letter-spacing: 0.3em;
+}
+
+.caption2-slide1 {
+  color: var(--text-main);
+  text-shadow: 0 0 45px rgba(79,141,255,0.45);
+}
+
+/* INPUT FOCUS */
+textarea:focus, input:focus {
+  box-shadow: 0 0 0px 2px var(--blue-main) !important;
+}
+
+/* SELECT2 */
+.select2-container--focus,
+.select2-container--open {
+  box-shadow: 0 0 0px 2px var(--blue-main);
+}
+
+.select2-container--default .select2-results__option[aria-selected=true],
+.select2-container .select2-results__option--highlighted {
+  background-color: var(--blue-main);
+}
+
+/* IMAGE HOVER */
+.hov-img-zoom {
+  border-radius: 18px;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.65);
+}
+
+.hov-img-zoom:hover img {
+  transform: scale(1.07);
+  filter: brightness(1.08) contrast(1.05);
+}
+
+/* RESERVATION IMAGE */
+.wrap-pic-booking {
+  border-radius: 20px;
+  border: 1px solid rgba(79,141,255,0.18);
+  box-shadow:
+    0 0 0 1px rgba(79,141,255,0.06),
+    0 25px 70px rgba(0,0,0,0.75);
+}
+
+.wrap-pic-booking:hover {
+  box-shadow:
+    0 0 30px rgba(79,141,255,0.35),
+    0 40px 100px rgba(0,0,0,0.85);
+}
+
+/* CALENDAR */
+td.active {
+  background-color: var(--blue-main) !important;
+}
+
+/* GALLERY OVERLAY */
+.overlay-item-gallery {
+  background-color: rgba(79,141,255,0.8);
+}
+
+/* CONTACT SECTION */
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--blue-main);
+  box-shadow: 0 0 0 3px rgba(79,141,255,0.2);
+}
+
+.contact-btn {
+  background: linear-gradient(135deg,#1c5ed8,#4f8dff);
+}
+
+.contact-btn:hover {
+  background: black;
+}
+
+/* FOOTER */
+.footer-pro {
+  background: linear-gradient(180deg, #020812, #010409);
+}
+
+.footer-col h4::after {
+  background: var(--blue-main);
+}
+
+.brand span {
+  color: var(--blue-main);
+}
+
+.footer-col ul li a:hover {
+  color: var(--blue-main);
+}
+
+.contact-item i {
+  color: var(--blue-main);
+}
+
+.social-icons a:hover {
+  background: var(--blue-main);
+  border-color: var(--blue-main);
+}
+
+/* BACK TO TOP */
+.btn-back-to-top:hover {
+  background-color: var(--blue-main);
+}
+
+	.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.logo img {
+    max-height: 70px;   /* 🔥 Adjust this (60–80px ideal) */
+    width: auto;
+    height: auto;
+    display: block;
+}

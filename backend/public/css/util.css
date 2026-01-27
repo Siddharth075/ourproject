@@ -3826,3 +3826,15 @@ RESPONSIVE  RESPONSIVE  RESPONSIVE  RESPONSIVE   RESPONSIVE
 		align-items: center;
 	}
 }
+
+	.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.logo img {
+    max-height: 70px;   /* 🔥 Adjust this (60–80px ideal) */
+    width: auto;
+    height: auto;
+    display: block;
+}

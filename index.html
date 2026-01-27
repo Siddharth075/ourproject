@@ -120,6 +120,304 @@ body {
     height: auto;
     display: block;
 }
+
+/* ======================================================
+   PREMIUM DARK + BLUE THEME OVERRIDE
+====================================================== */
+
+:root {
+  --blue: #4f8dff;
+  --blue-soft: #7aa7ff;
+  --dark: #050b16;
+  --dark2: #08192f;
+  --glass: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.08);
+  --text: #eaf3ff;
+  --muted: #9fb7d4;
+}
+
+/* BODY */
+body {
+  background: radial-gradient(circle at top, #08192f 0%, #020812 45%, #000 100%);
+  color: var(--text);
+}
+
+/* LINKS */
+a:hover { color: var(--blue) !important; }
+
+/* HEADER */
+.wrap-menu-header {
+  background: linear-gradient(135deg, rgba(2,8,18,.75), rgba(8,25,47,.75));
+  backdrop-filter: blur(12px);
+  border-top: 4px solid var(--blue);
+}
+
+.header-fixed .wrap-menu-header {
+  background: rgba(2,8,18,0.92);
+}
+
+/* NAV LINKS */
+.main_menu > li > a {
+  color: #dbe8ff;
+  letter-spacing: 0.4px;
+}
+
+.main_menu > li:hover > a {
+  color: var(--blue) !important;
+  text-shadow: 0 0 15px rgba(79,141,255,.7);
+}
+
+/* SOCIAL ICONS */
+.social a { color: #dbe8ff; }
+
+.social a:hover {
+  color: var(--blue);
+  text-shadow: 0 0 15px rgba(79,141,255,.7);
+}
+
+/* HERO SLIDER */
+.item-slick1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.85)),
+    radial-gradient(circle at center, rgba(79,141,255,.15), transparent 70%);
+}
+
+.caption1-slide1 {
+  color: var(--blue-soft);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+}
+
+.caption2-slide1 {
+  color: #fff;
+  text-shadow: 0 10px 40px rgba(79,141,255,.4);
+}
+
+/* HERO BUTTON */
+.btn1 {
+  background: linear-gradient(135deg, #1c5ed8, #4f8dff);
+  color: #fff;
+  border-radius: 50px;
+  box-shadow: 0 0 25px rgba(79,141,255,.5);
+}
+
+.btn1:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 40px rgba(79,141,255,.9);
+}
+
+/* SECTION BACKGROUNDS */
+.bg1-pattern,
+.bg2-pattern,
+.content-intro {
+  background: linear-gradient(135deg, #050b16, #020812);
+}
+
+/* TITLES */
+.tit2 { color: var(--blue-soft); }
+.tit3, .tit4, .tit5 { color: #fff; }
+
+/* TEXT */
+p, .txt9, .txt10, .txt11 {
+  color: var(--muted);
+}
+
+/* SERVICE CARDS */
+.blo1 {
+  background: linear-gradient(145deg, #08192f, #020812);
+  border-radius: 18px;
+  padding: 25px;
+  border: 1px solid var(--border);
+  transition: 0.5s;
+}
+
+.blo1:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow:
+    0 0 40px rgba(79,141,255,.25),
+    inset 0 0 15px rgba(79,141,255,.08);
+}
+
+/* IMAGE BOX */
+.wrap-pic-blo1,
+.wrap-pic-welcome,
+.wrap-pic-booking {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0,0,0,.7);
+}
+
+/* SLIDER IMAGES */
+.img-box img {
+  border-radius: 16px;
+  transition: 0.6s;
+}
+
+.img-box:hover img {
+  transform: scale(1.12);
+  filter: brightness(1.15);
+}
+
+/* FORM INPUTS */
+.wrap-inputdate,
+.wrap-inputtime,
+.wrap-inputpeople,
+.wrap-inputname,
+.wrap-inputphone,
+.wrap-inputemail {
+  background: linear-gradient(145deg, #08192f, #020812);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: inset 0 0 12px rgba(79,141,255,.06);
+}
+
+.wrap-inputdate input,
+.wrap-inputname input,
+.wrap-inputphone input,
+.wrap-inputemail input {
+  background: transparent;
+  color: #fff;
+}
+
+/* FORM FOCUS */
+input:focus, textarea:focus {
+  border-color: var(--blue) !important;
+  box-shadow: 0 0 0 3px rgba(79,141,255,.2);
+}
+
+/* BUTTON */
+.btn3 {
+  background: linear-gradient(135deg, #1c5ed8, #4f8dff);
+  color: white;
+  border-radius: 50px;
+  box-shadow: 0 0 25px rgba(79,141,255,.6);
+}
+
+.btn3:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 45px rgba(79,141,255,1);
+}
+
+/* FOOTER */
+.footer-pro {
+  background: linear-gradient(135deg, #020812, #050b16);
+  border-top: 1px solid var(--border);
+}
+
+.footer-col h4::after {
+  background: linear-gradient(135deg, #1c5ed8, #4f8dff);
+}
+
+.brand span { color: var(--blue); }
+
+.footer-col ul li a:hover {
+  color: var(--blue);
+}
+
+.social-icons a:hover {
+  background: linear-gradient(135deg, #1c5ed8, #4f8dff);
+  border-color: transparent;
+}
+
+/* BACK TO TOP */
+.btn-back-to-top {
+  background: linear-gradient(135deg, #1c5ed8, #4f8dff);
+  box-shadow: 0 0 25px rgba(79,141,255,.7);
+}
+
+/* SIDEBAR */
+.sidebar {
+  background: linear-gradient(135deg, #020812, #08192f);
+}
+
+.menu-sidebar a:hover {
+  color: var(--blue);
+}
+
+/* PREMIUM MICRO ANIMATIONS */
+a, button, img {
+  transition: 0.4s cubic-bezier(.22,.61,.36,1);
+}
+/* Main select box */
+.select2-container .select2-selection--single {
+  background: linear-gradient(145deg, #08192f, #020812);
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 12px !important;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 12px rgba(79,141,255,0.05);
+}
+
+/* Selected text */
+.select2-selection__rendered {
+  color: #eaf3ff !important;
+  font-size: 14px;
+  padding-left: 18px !important;
+  letter-spacing: 0.3px;
+}
+
+/* Arrow */
+.select2-selection__arrow b {
+  border-color: #7aa7ff transparent transparent transparent !important;
+}
+
+/* Focus glow */
+.select2-container--focus .select2-selection--single {
+  border-color: #4f8dff !important;
+  box-shadow:
+    0 0 0 3px rgba(79,141,255,0.18),
+    0 0 18px rgba(79,141,255,0.3);
+}
+
+/* Dropdown panel */
+.select2-dropdown {
+  background: linear-gradient(145deg, #08192f, #020812);
+  border-radius: 14px !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.9),
+    0 0 25px rgba(79,141,255,0.25);
+  overflow: hidden;
+}
+
+/* Options */
+.select2-results__option {
+  color: #cfe2ff !important;
+  padding: 12px 15px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+/* Hover highlight (BLUE glow) */
+.select2-results__option--highlighted[aria-selected] {
+  background: linear-gradient(135deg, #1c5ed8, #4f8dff) !important;
+  color: #ffffff !important;
+}
+
+/* Selected option */
+.select2-results__option[aria-selected="true"] {
+  background: rgba(79,141,255,0.18) !important;
+  color: #ffffff !important;
+}
+
+/* Search field */
+.select2-search--dropdown .select2-search__field {
+  background: #020812;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.select2-search--dropdown .select2-search__field:focus {
+  border-color: #4f8dff !important;
+  box-shadow: 0 0 0 3px rgba(79,141,255,0.18);
+}
+
 </style>
 <body class="animsition">
 

@@ -34,11 +34,14 @@
 <!--===============================================================================================-->
 </head>
 <style>
-	:root {
-  --red: #e50914;
-  --dark: #111;
-  --white: #fff;
-  --gray: #f5f5f5;
+:root {
+  --blue: #4f8dff;
+  --blue-soft: #78b2ff;
+  --dark: #020812;
+  --dark-soft: #071425;
+  --white: #eaf3ff;
+  --gray: #a9c1dd;
+  --glow: rgba(79,141,255,0.45);
 }
 
 * {
@@ -49,17 +52,17 @@
 }
 
 body {
-  background: linear-gradient(135deg, #111, #1b1b1b);
+  background: radial-gradient(circle at top, #071425, #020812 70%);
   color: var(--white);
 }
 
 /* =======================
-   3D HEADING
+   HERO HEADING (PREMIUM)
 ======================= */
 .hero {
   text-align: center;
-  padding: 80px 20px;
-  perspective: 1000px;
+  padding: 100px 20px 80px;
+  perspective: 1200px;
 }
 
 .hero h1 {
@@ -68,54 +71,60 @@ body {
   color: var(--white);
   text-transform: uppercase;
   transform-style: preserve-3d;
-  animation: float 4s ease-in-out infinite;
+  animation: float 5s ease-in-out infinite;
+  text-shadow: 0 0 40px var(--glow);
 }
 
 .hero h1 span {
-  color: var(--red);
+  color: var(--blue);
 }
 
 @keyframes float {
-  0% { transform: rotateX(0deg) rotateY(0deg); }
-  50% { transform: rotateX(10deg) rotateY(-10deg); }
-  100% { transform: rotateX(0deg) rotateY(0deg); }
+  0% { transform: rotateX(0deg) rotateY(0deg) translateY(0); }
+  50% { transform: rotateX(8deg) rotateY(-6deg) translateY(-6px); }
+  100% { transform: rotateX(0deg) rotateY(0deg) translateY(0); }
 }
 
 .hero p {
-  color: #ccc;
+  color: var(--gray);
   margin-top: 15px;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.3px;
 }
 
 /* =======================
-   PRICING SECTION
+   PRICING GRID
 ======================= */
 .pricing {
-  padding: 50px 20px 80px;
+  padding: 40px 20px 100px;
   max-width: 1400px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
 }
 
+/* =======================
+   PREMIUM PRICING CARD
+======================= */
 .card {
-  background: linear-gradient(145deg, #1b1b1b, #0e0e0e);
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-  transition: 0.4s;
+  background: linear-gradient(145deg, #08192f, #030b18);
+  border-radius: 22px;
+  padding: 35px 30px;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.75);
+  transition: 0.45s cubic-bezier(.25,.8,.25,1);
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.04);
 }
 
 .card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, transparent, rgba(229,9,20,0.3), transparent);
+  background: linear-gradient(120deg, transparent, rgba(79,141,255,0.18), transparent);
   opacity: 0;
-  transition: 0.4s;
+  transition: 0.45s;
 }
 
 .card:hover::before {
@@ -123,38 +132,48 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-15px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(229,9,20,0.4);
+  transform: translateY(-16px) scale(1.03);
+  box-shadow:
+    0 35px 90px rgba(0,0,0,0.85),
+    0 0 45px rgba(79,141,255,0.35);
 }
 
+/* =======================
+   PLAN TEXT
+======================= */
 .plan-title {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 5px;
+  color: var(--white);
 }
 
 .plan-sub {
-  color: #aaa;
+  color: var(--gray);
   font-size: 0.9rem;
   margin-bottom: 20px;
 }
 
+/* =======================
+   PRICE
+======================= */
 .price {
   margin: 20px 0;
 }
 
 .price del {
-  color: #777;
+  color: #5f7ea5;
 }
 
 .price h2 {
-  font-size: 2.2rem;
-  color: var(--red);
+  font-size: 2.4rem;
+  color: var(--blue);
+  text-shadow: 0 0 15px var(--glow);
 }
 
 .gst {
   font-size: 0.85rem;
-  color: #ccc;
+  color: #8fb3df;
 }
 
 /* =======================
@@ -166,31 +185,35 @@ body {
 
 .features li {
   list-style: none;
-  padding: 6px 0;
-  font-size: 0.9rem;
-  border-bottom: 1px dashed #333;
+  padding: 8px 0;
+  font-size: 0.92rem;
+  border-bottom: 1px dashed rgba(255,255,255,0.08);
+  color: #cfe3ff;
 }
 
 /* =======================
-   BUTTON
+   PREMIUM BUTTON
 ======================= */
 .btn {
-  margin-top: 25px;
+  margin-top: 30px;
   display: inline-block;
   width: 100%;
   text-align: center;
-  padding: 14px;
-  background: linear-gradient(135deg, var(--red), #ff3c3c);
-  color: var(--white);
+  padding: 15px;
+  background: linear-gradient(135deg, #1c5ed8, #4f8dff);
+  color: white;
   font-weight: 600;
   text-decoration: none;
   border-radius: 50px;
-  transition: 0.4s;
+  transition: 0.45s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 15px 40px rgba(79,141,255,0.45);
 }
 
 .btn:hover {
-  background: linear-gradient(135deg, #ff3c3c, var(--red));
-  transform: scale(1.05);
+  transform: scale(1.06) translateY(-2px);
+  box-shadow:
+    0 25px 60px rgba(79,141,255,0.6),
+    0 0 20px rgba(79,141,255,0.4);
 }
 
 /* =======================
@@ -202,6 +225,7 @@ body {
   }
 }
 </style>
+
 <body class="animsition">
 
 	<!-- Header -->
@@ -213,7 +237,7 @@ body {
 					<!-- Logo -->
 					<div class="logo">
 						<a href="index.html">
-							<img src="images/icons/logo.png" alt="IMG-LOGO" data-logofixed="images/icons/logo2.png">
+							<img src="images/logo.png" alt="IMG-LOGO" data-logofixed="images/logo.png">
 						</a>
 					</div>
 

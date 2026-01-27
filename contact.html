@@ -34,9 +34,258 @@
 <!--===============================================================================================-->
 </head>
 <style>
+	/* ==========================
+   CONTACT PAGE – PREMIUM BLUE
+========================== */
+
+.contact-section {
+  background: radial-gradient(circle at top, #071425, #020812 70%);
+  padding: 110px 0;
+  font-family: 'Poppins', sans-serif;
+  color: #eaf3ff;
+}
+
+/* HEADINGS */
+
+.contact-title {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 600;
+  color: #eaf3ff;
+  text-shadow: 0 0 25px rgba(79,141,255,0.35);
+}
+
+.contact-subtitle {
+  text-align: center;
+  color: #a9c1dd;
+  margin-bottom: 60px;
+  font-size: 16px;
+}
+
+/* FORM CARD */
+
+.wrap-form-booking {
+  background: linear-gradient(145deg, #08192f, #030b18);
+  padding: 45px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow:
+    0 25px 70px rgba(0,0,0,0.85),
+    0 0 40px rgba(79,141,255,0.15);
+}
+
+/* LABELS */
+
+.txt9 {
+  color: #9fc1ff;
+  letter-spacing: 0.5px;
+  font-size: 13px;
+}
+
+/* INPUTS */
+
+.wrap-form-booking input,
+.wrap-form-booking select,
+.wrap-form-booking textarea {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  color: #eaf3ff;
+  transition: 0.35s;
+}
+
+.wrap-form-booking input:focus,
+.wrap-form-booking select:focus,
+.wrap-form-booking textarea:focus {
+  border-color: #4f8dff !important;
+  box-shadow: 0 0 0 3px rgba(79,141,255,0.18);
+  background: rgba(255,255,255,0.05);
+}
+
+/* BUTTON */
+
+.btn3 {
+  background: linear-gradient(135deg, #1c5ed8, #4f8dff);
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  box-shadow: 0 15px 40px rgba(79,141,255,0.45);
+  transition: 0.45s cubic-bezier(.25,.8,.25,1);
+}
+
+.btn3:hover {
+  transform: scale(1.06) translateY(-2px);
+  box-shadow:
+    0 25px 60px rgba(79,141,255,0.65),
+    0 0 25px rgba(79,141,255,0.4);
+}
+
+/* ==========================
+   CONTACT INFO CARDS
+========================== */
+
+.contact-info {
+  margin-top: 90px;
+  display: flex;
+  justify-content: space-between;
+  gap: 35px;
+  text-align: center;
+}
+
+.info-box {
+  flex: 1;
+  background: linear-gradient(145deg, #08192f, #030b18);
+  padding: 35px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.85),
+    0 0 30px rgba(79,141,255,0.12);
+  transition: 0.45s cubic-bezier(.25,.8,.25,1);
+}
+
+.info-box:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.9),
+    0 0 40px rgba(79,141,255,0.35);
+}
+
+.info-box span {
+  font-size: 36px;
+}
+
+.info-box h4 {
+  margin: 15px 0 8px;
+  color: #ffffff;
+}
+
+.info-box p {
+  color: #a9c1dd;
+  font-size: 14px;
+}
+
+/* ==========================
+   HERO BANNER FIX
+========================== */
+
+.bg-title-page {
+  position: relative;
+}
+
+.bg-title-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(2,8,18,0.75),
+    rgba(2,8,18,0.9)
+  );
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:768px) {
+  .contact-info {
+    flex-direction: column;
+  }
+
+  .wrap-form-booking {
+    padding: 30px;
+  }
+
+  .contact-title {
+    font-size: 32px;
+  }
+}
+
+
+/* ===========================
+   DARK SELECT + BLUE HOVER
+=========================== */
+
+/* Main select box */
+.select2-container .select2-selection--single {
+  background: linear-gradient(145deg, #08192f, #020812);
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 12px !important;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 12px rgba(79,141,255,0.05);
+}
+
+/* Selected text */
+.select2-selection__rendered {
+  color: #eaf3ff !important;
+  font-size: 14px;
+  padding-left: 18px !important;
+  letter-spacing: 0.3px;
+}
+
+/* Arrow */
+.select2-selection__arrow b {
+  border-color: #7aa7ff transparent transparent transparent !important;
+}
+
+/* Focus glow */
+.select2-container--focus .select2-selection--single {
+  border-color: #4f8dff !important;
+  box-shadow:
+    0 0 0 3px rgba(79,141,255,0.18),
+    0 0 18px rgba(79,141,255,0.3);
+}
+
+/* Dropdown panel */
+.select2-dropdown {
+  background: linear-gradient(145deg, #08192f, #020812);
+  border-radius: 14px !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.9),
+    0 0 25px rgba(79,141,255,0.25);
+  overflow: hidden;
+}
+
+/* Options */
+.select2-results__option {
+  color: #cfe2ff !important;
+  padding: 12px 15px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+/* Hover highlight (BLUE glow) */
+.select2-results__option--highlighted[aria-selected] {
+  background: linear-gradient(135deg, #1c5ed8, #4f8dff) !important;
+  color: #ffffff !important;
+}
+
+/* Selected option */
+.select2-results__option[aria-selected="true"] {
+  background: rgba(79,141,255,0.18) !important;
+  color: #ffffff !important;
+}
+
+/* Search field */
+.select2-search--dropdown .select2-search__field {
+  background: #020812;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.select2-search--dropdown .select2-search__field:focus {
+  border-color: #4f8dff !important;
+  box-shadow: 0 0 0 3px rgba(79,141,255,0.18);
+}
 
 
 </style>
+
 <body class="animsition">
 
 	<!-- Header -->
@@ -48,7 +297,7 @@
 					<!-- Logo -->
 					<div class="logo">
 						<a href="index.html">
-							<img src="images/icons/logo.png" alt="IMG-LOGO" data-logofixed="images/icons/logo2.png">
+							<img src="images/logo.png" alt="IMG-LOGO" data-logofixed="images/logo.png">
 						</a>
 					</div>
 

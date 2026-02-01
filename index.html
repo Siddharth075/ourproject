@@ -32,6 +32,51 @@
 <!--===============================================================================================-->
 </head>
 <style>
+
+	body {
+  margin: 0;
+  padding: 0;
+  background: #111;
+}
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(400px * 8);
+  animation: scroll 30s linear infinite;
+}
+
+.slide-track img {
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+/* Animation */
+@keyframes scroll {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .slide-track img {
+    width: 250px;
+    height: 160px;
+  }
+}
+
 	.logo {
     display: flex;
     align-items: center;
@@ -592,87 +637,24 @@ Designed to boost sales, engage customers, and grow your online business.
 				</h3>
 			</div>
 
-			<div class="row">
-				<div class="col-md-8">
-					<div class="row">
-						<div class="col-sm-6">
-							<!-- Item our menu -->
-							<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30">
-								<img src="images/our-menu-01.jpg" alt="IMG-MENU">
+			<div class="slider">
+  <div class="slide-track">
+    <img src="images/slider1.jpg" />
+    <img src="images/slider2.jpg" />
+    <img src="images/slider3.jpg" />
+    <img src="images/slider4.jpg" />
+    <img src="images/slider5.jpg" />
+    <img src="images/slider6.jpg" />
 
-							
-								<a href="#" class="btn2 flex-c-m txt5 ab-c-m size4">
-									Lunch
-								</a>
-							</div>
-						</div>
-
-						<div class="col-sm-6">
-							<!-- Item our menu -->
-							<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30">
-								<img src="images/our-menu-05.jpg" alt="IMG-MENU">
-
-								<!-- Button2 -->
-								<a href="#" class="btn2 flex-c-m txt5 ab-c-m size5">
-									Dinner
-								</a>
-							</div>
-						</div>
-
-						<div class="col-12">
-							<!-- Item our menu -->
-							<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30">
-								<img src="images/our-menu-13.jpg" alt="IMG-MENU">
-
-								<!-- Button2 -->
-								<a href="#" class="btn2 flex-c-m txt5 ab-c-m size6">
-									Happy Hour
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="row">
-						<div class="col-12">
-							<!-- Item our menu -->
-							<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30">
-								<img src="images/our-menu-08.jpg" alt="IMG-MENU">
-
-								<!-- Button2 -->
-								<a href="#" class="btn2 flex-c-m txt5 ab-c-m size7">
-									Drink
-								</a>
-							</div>
-						</div>
-
-						<div class="col-12">
-							<!-- Item our menu -->
-							<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30">
-								<img src="images/our-menu-10.jpg" alt="IMG-MENU">
-
-								<!-- Button2 -->
-								<a href="#" class="btn2 flex-c-m txt5 ab-c-m size8">
-									Starters
-								</a>
-							</div>
-						</div>
-
-						<div class="col-12">
-							<!-- Item our menu -->
-							<div class="item-ourmenu bo-rad-10 hov-img-zoom pos-relative m-t-30">
-								<img src="images/our-menu-16.jpg" alt="IMG-MENU">
-
-								<!-- Button2 -->
-								<a href="#" class="btn2 flex-c-m txt5 ab-c-m size9">
-									Dessert
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+    <!-- duplicate images for seamless loop -->
+    <img src="images/slider1.jpg" />
+    <img src="images/slider2.jpg" />
+    <img src="images/slider3.jpg" />
+    <img src="images/slider4.jpg" />
+    <img src="images/slider5.jpg" />
+    <img src="images/slider6.jpg" />
+  </div>
+</div>
 
 		</div>
 	</section>
